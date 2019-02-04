@@ -4,11 +4,22 @@
 @Html.Raw(ListContent.Body)
 @foreach (var fact in AsDynamic(Data["Default"]))
 {
-    <div class="sc-element">
-        @Edit.Toolbar(fact)
-        @fact.MicroTitle
-        @fact.Title        
-        @Html.Raw(fact.Body)
-        <img src="@fact.Image" alt="@fact.Title" />
+    <div class="co-container-outer co-intro">
+        <div class="co-container-inner">
+            <div class="row">                
+                <div class="col-12 col-md-6 mb-4 sc-element">
+                    @Edit.Toolbar(Content)
+                    <h5>@fact.MicroTitle</h5>
+                    <h1>@fact.Title</h1>
+                    <div class="co-text mb-4">
+                        @Html.Raw(fact.Body)
+                    </div>
+                    <a href="#" class="btn btn-primary">CTA Button</a>
+                </div>
+                <div class="col-12 col-md-6">
+                    <img class="img-fluid" src="@fact.Image" alt="@fact.Title">
+                </div>
+            </div>
+        </div>
     </div>
 }

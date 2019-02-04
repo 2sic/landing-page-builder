@@ -1,0 +1,35 @@
+ @import 'functions';
+ @import '../../node_modules/bootstrap-4.2.1/scss/mixins/breakpoints';
+ @import 'variables.scss'; //Layout Stylings
+ @media all {
+   .co-container-outer {
+     .co-container-inner {
+       margin: 0 auto;
+       max-width: 1200px;
+       overflow:hidden;
+       padding-left:$grid-gutter-width/1.5;
+       padding-right:$grid-gutter-width/1.5;
+       padding-top:$grid-gutter-width;
+       padding-bottom:$grid-gutter-width;
+       @include media-breakpoint-up(md) {
+         padding-left:$grid-gutter-width*1.5;
+         padding-right:$grid-gutter-width*1.5;
+         padding-top:$grid-gutter-width*2.5;
+         padding-bottom:$grid-gutter-width*2.5;
+       }
+     }
+   }
+  // Start Intro
+   .co-intro {
+     background:red;
+     .co-container-inner {
+       min-height: 70vh;
+       display: flex;
+       align-items: center;
+       .row {
+        display: flex;
+        align-items: center;
+       }
+     }
+   }
+ }

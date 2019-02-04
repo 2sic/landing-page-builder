@@ -2,10 +2,22 @@
 @ListContent.MicroTitle
 @ListContent.Title
 @Html.Raw(ListContent.Body)
-<div class="sc-element">
-    @Edit.Toolbar(Content)
-    @Content.MicroTitle
-    @Content.Title
-    <img src="@Content.Image" alt="@Content.Title" />
-    @Html.Raw(Content.Body)
+<div class="co-container-outer co-intro">
+    <div class="co-container-inner sc-element">
+        <div class="row">
+            @Edit.Toolbar(Content)
+            <div class="col-12 col-md-6 order-md-2 mb-4">                    
+                <h5>@Content.MicroTitle</h5>
+                <h1>@Content.Title</h1>
+                <div class="co-text mb-4">
+                    @Html.Raw(Content.Body)
+                </div>
+                <a href="#" class="btn btn-primary">CTA Button</a>
+            </div>
+            <div class="col-12 col-md-6">
+                <img class="img-fluid" src="@Content.Image" alt="@Content.Title">
+            </div>
+        </div>
+    </div>
 </div>
+        

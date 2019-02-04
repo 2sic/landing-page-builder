@@ -1,0 +1,28 @@
+@media all {
+  .co-container-outer .co-container-inner {
+    margin: 0 auto;
+    max-width: 1200px;
+    overflow: hidden;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px; } }
+  @media all and (min-width: 768px) {
+    .co-container-outer .co-container-inner {
+      padding-left: 45px;
+      padding-right: 45px;
+      padding-top: 75px;
+      padding-bottom: 75px; } }
+
+@media all {
+  .co-intro {
+    background: red; }
+    .co-intro .co-container-inner {
+      min-height: 70vh;
+      display: flex;
+      align-items: center; }
+      .co-intro .co-container-inner .row {
+        display: flex;
+        align-items: center; } }
+
+/*# sourceMappingURL=styles.css.map */
