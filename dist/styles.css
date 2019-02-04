@@ -15,14 +15,12 @@
       padding-bottom: 75px; } }
 
 @media all {
-  .co-intro {
-    background: red; }
-    .co-intro .co-container-inner {
-      min-height: 70vh;
+  .co-intro .co-container-inner {
+    min-height: 70vh;
+    display: flex;
+    align-items: center; }
+    .co-intro .co-container-inner .row {
       display: flex;
-      align-items: center; }
-      .co-intro .co-container-inner .row {
-        display: flex;
-        align-items: center; } }
+      align-items: center; } }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,14 +1,23 @@
+@RenderPage("_sharedAssets.cshtml")
+
 @Edit.Toolbar(ListContent)
 @ListContent.MicroTitle
 @ListContent.Title
 @Html.Raw(ListContent.Body)
+
+@{int i = 0;}
 @foreach (var fact in AsDynamic(Data["Default"]))
 {
-    <div class="co-container-outer co-intro">
+    <div class="co-container-outer co-fact">
         <div class="co-container-inner">
-            <div class="row">                
-                <div class="col-12 col-md-6 order-md-2 mb-4 sc-element">
-                    @Edit.Toolbar(Content)
+            <div class="row">         
+                @{var divOrderClass = "";}
+                @if ((i % 2) == 0) {
+                    divOrderClass = "order-md-2";
+                }              
+                
+                <div class="col-12 col-md-6 mb-4 sc-element @divOrderClass">
+                    @Edit.Toolbar(fact)
                     <h5>@fact.MicroTitle</h5>
                     <h1>@fact.Title</h1>
                     <div class="co-text mb-4">
@@ -22,4 +31,6 @@
             </div>
         </div>
     </div>
+
+    i++;
 }
