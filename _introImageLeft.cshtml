@@ -1,0 +1,8 @@
+@Edit.Toolbar(ListContent)
+<div class="sc-element">
+    @Edit.Toolbar(Content)
+    <h2>@Content.MicroTitle</h2>
+    <h1>@Content.Title</h1>
+    <img src="@Content.Image" alt="@Content.Title" />
+    @Html.Raw(Content.Body)
+</div>
