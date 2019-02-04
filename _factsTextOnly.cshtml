@@ -2,9 +2,12 @@
 @ListContent.MicroTitle
 @ListContent.Title
 @Html.Raw(ListContent.Body)
-<div class="sc-element">
-    @Edit.Toolbar(Content)
-    @Content.MicroTitle
-    @Content.Title
-    @Html.Raw(Content.Body)
-</div>
+@foreach (var fact in AsDynamic(Data["Default"]))
+{
+    <div class="sc-element">
+        @Edit.Toolbar(fact)
+        @fact.MicroTitle
+        @fact.Title        
+        @Html.Raw(fact.Body)
+    </div>
+}

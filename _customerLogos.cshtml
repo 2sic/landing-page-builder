@@ -4,9 +4,8 @@
 @Html.Raw(ListContent.Body)
 @foreach (var customer in AsDynamic(Data["Default"]))
 {
-    @Edit.Toolbar(ListContent)
     <div class="sc-element">
-        @Edit.Toolbar(Content)
+        @Edit.Toolbar(customer)
         <strong>@customer.Name</strong>
         @Html.Raw(customer.Body)
         <img src="@customer.Image" alt="@customer.Name" />

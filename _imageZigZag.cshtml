@@ -1,0 +1,14 @@
+@Edit.Toolbar(ListContent)
+@ListContent.MicroTitle
+@ListContent.Title
+@Html.Raw(ListContent.Body)
+@foreach (var data in AsDynamic(Data["Default"]))
+{
+    <div class="sc-element">
+        @Edit.Toolbar(data)
+        @data.MicroTitle
+        @data.Title
+        <img src="@data.Image" alt="@data.Title" />
+        @Html.Raw(data.Body)
+    </div>
+}
