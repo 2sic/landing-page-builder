@@ -1,3 +1,7 @@
+@Edit.Toolbar(ListContent)
+@ListContent.MicroTitle
+@ListContent.Title
+@Html.Raw(ListContent.Body)
 @foreach (var customer in AsDynamic(Data["Default"]))
 {
     @Edit.Toolbar(ListContent)
