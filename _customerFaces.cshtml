@@ -1,4 +1,4 @@
-@RenderPage("_sharedAssets.cshtml")
+@RenderPage("_sharedAssets.cshtml", new { parts = "styles,scripts"})
 
 <div class="co-container-outer position-relative co-customer-faces @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "")" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
     <div class="co-backgroundimage-overlay @ListContent.Presentation.BGImageEffects"></div>
