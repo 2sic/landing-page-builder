@@ -10,6 +10,10 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-md-8 text-center mb-4 sc-element">
                     @Edit.Toolbar(fact)
+                    @if (!String.IsNullOrEmpty(fact.Icon))
+                    {
+                        <i class="co-icon text-primary fas @fact.Icon" aria-hidden="true"></i>
+                    }
                     <h5>@fact.MicroTitle</h5>
                     <h1>@fact.Title</h1>
                     <div class="co-text mb-4">
