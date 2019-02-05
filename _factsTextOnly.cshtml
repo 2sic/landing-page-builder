@@ -14,7 +14,10 @@
                     {
                         <i class="co-icon text-primary fas @fact.Icon" aria-hidden="true"></i>
                     }
-                    <h5>@fact.MicroTitle</h5>
+                    @if (!String.IsNullOrEmpty(@fact.MicroTitle))
+                    {
+                        <h5>@fact.MicroTitle</h5>
+                    }
                     <h1>@fact.Title</h1>
                     <div class="co-text mb-4">
                         @Html.Raw(fact.Body)

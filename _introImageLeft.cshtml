@@ -8,7 +8,10 @@
         <div class="row">
             <div class="col-12 col-md-6 order-md-2 mb-4 sc-element">
                 @Edit.Toolbar(Content)
-                <h5>@Content.MicroTitle</h5>
+                @if (!String.IsNullOrEmpty(@Content.MicroTitle))
+                {
+                    <h5>@Content.MicroTitle</h5>
+                }
                 <h1>@Content.Title</h1>
                 <div class="co-text mb-4">
                     @Html.Raw(Content.Body)

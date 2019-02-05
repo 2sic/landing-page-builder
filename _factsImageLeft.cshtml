@@ -11,7 +11,10 @@
             <div class="row">         
                 <div class="col-12 col-md-6 mb-4 sc-element @((i % 2) == 0 ? "order-md-2" : "")">
                     @Edit.Toolbar(fact)
-                    <h5>@fact.MicroTitle</h5>
+                    @if (!String.IsNullOrEmpty(@fact.MicroTitle))
+                    {
+                        <h5>@fact.MicroTitle</h5>
+                    }
                     <h1>@fact.Title</h1>
                     <div class="co-text mb-4">
                         @Html.Raw(fact.Body)

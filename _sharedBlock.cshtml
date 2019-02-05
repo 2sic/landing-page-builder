@@ -1,7 +1,10 @@
 <div class="row justify-content-center">
     <div class="col-12 mb-4 text-center sc-element">
         @Edit.Toolbar(ListContent)
-        <h4>@ListContent.MicroTitle</h4>
+        @if (!String.IsNullOrEmpty(@ListContent.MicroTitle))
+        {
+            <h4>@ListContent.MicroTitle</h4>
+        }
         <h2>@ListContent.Title</h2>
         <div class="co-text mb-4">
             @Html.Raw(ListContent.Body)
