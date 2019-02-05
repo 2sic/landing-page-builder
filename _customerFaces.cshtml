@@ -9,7 +9,16 @@
             @foreach (var customer in AsDynamic(Data["Default"]))
             {                
                 <div class="col-12 col-md-3 mb-4">
-                    <img class="img-fluid" src="@customer.Image" alt="@customer.Name">
+                    @if (!String.IsNullOrEmpty(customer.Image))
+                    {
+                        <div class="co-person-image-wrapper">
+                            <img class="img-fluid" src="@customer.Image" alt="@customer.Name">
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="co-person-placeholder"></div>
+                    }
                 </div>
                 <div class="col-12 col-md-3 mb-4 sc-element">
                     @Edit.Toolbar(customer)
