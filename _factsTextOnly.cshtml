@@ -2,16 +2,7 @@
 
 <div class="co-container-outer co-fact @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "")" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
     <div class="co-container-inner">
-        <div class="row justify-content-center">
-            <div class="col-12 mb-4 text-center sc-element">
-                @Edit.Toolbar(ListContent)
-                <h4>@ListContent.MicroTitle</h4>
-                <h2>@ListContent.Title</h2>
-                <div class="co-text mb-4">
-                    @Html.Raw(ListContent.Body)
-                </div>
-            </div>
-        </div>
+        @RenderPage("_sharedBlock.cshtml")
 
         @foreach (var fact in AsDynamic(Data["Default"]))
         {    
