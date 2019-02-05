@@ -20,7 +20,8 @@
     .co-intro .co-container-inner {
       min-height: 70vh;
       display: flex;
-      align-items: center; }
+      align-items: center;
+      flex-direction: column; }
       .co-intro .co-container-inner .row {
         display: flex;
         align-items: center; }

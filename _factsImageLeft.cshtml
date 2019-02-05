@@ -2,12 +2,14 @@
 
 <div class="co-container-outer co-fact">
     <div class="co-container-inner">
-        <div class="row">
-            <div class="col-12 mb-4 sc-element">
+        <div class="row justify-content-center">
+            <div class="col-12 mb-4 text-center sc-element">
                 @Edit.Toolbar(ListContent)
                 <h4>@ListContent.MicroTitle</h4>
                 <h2>@ListContent.Title</h2>
-                @Html.Raw(ListContent.Body)
+                <div class="co-text mb-4">
+                    @Html.Raw(ListContent.Body)
+                </div>
             </div>
         </div>
         
