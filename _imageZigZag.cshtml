@@ -1,14 +1,39 @@
-@Edit.Toolbar(ListContent)
-@ListContent.MicroTitle
-@ListContent.Title
-@Html.Raw(ListContent.Body)
-@foreach (var data in AsDynamic(Data["Default"]))
-{
-    <div class="sc-element">
-        @Edit.Toolbar(data)
-        @data.MicroTitle
-        @data.Title
-        <img src="@data.Image" alt="@data.Title" />
-        @Html.Raw(data.Body)
+@RenderPage("_sharedAssets.cshtml")
+
+<div class="co-container-outer co-image-zig-zag">
+    <div class="co-container-inner">
+        <div class="row">
+            <div class="col-12 mb-4 sc-element">
+                @Edit.Toolbar(ListContent)
+                <h4>@ListContent.MicroTitle</h4>
+                <h2>@ListContent.Title</h2>
+                @Html.Raw(ListContent.Body)
+            </div>
+        </div>
+        
+        @{int i = 0;}
+        @foreach (var data in AsDynamic(Data["Default"]))
+        {
+        <div class="row">         
+            @{var divOrderClass = "";}
+            @if ((i % 2) == 0) {
+                divOrderClass = "order-md-2";
+            }              
+            
+            <div class="col-12 col-md-6 mb-4 sc-element @divOrderClass">
+                @Edit.Toolbar(data)
+                <h5>@data.MicroTitle</h5>
+                <h1>@data.Title</h1>
+                <div class="co-text mb-4">
+                    @Html.Raw(data.Body)
+                </div>
+                <a href="#" class="btn btn-primary">CTA Button</a>
+            </div>
+            <div class="col-12 col-md-6">
+                <img class="img-fluid" src="@data.Image" alt="@data.Title">
+            </div>
+        </div>
+        i++;
+        }
     </div>
-}
+</div>

@@ -1,5 +1,5 @@
 @import 'functions';
-@import '../../node_modules/bootstrap-4.2.1/scss/mixins/breakpoints';
+@import "../../../_default/Skins/2sxcLandingPageBuilder-B4/node_modules/bootstrap/scss/mixins/_breakpoints.scss";
 @import 'variables.scss'; //Layout Stylings
 
 @media all {
@@ -39,18 +39,7 @@
   }
 
   // Start Facts
-  .co-facts {
-    background: blue;
-
-    .co-container-inner {
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-
-      .row {
-        display: flex;
-        align-items: center;
-      }
-    }
+  .co-fact {
+    background: yellow;
   }
 }

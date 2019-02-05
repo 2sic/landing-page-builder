@@ -23,6 +23,8 @@
       align-items: center; }
       .co-intro .co-container-inner .row {
         display: flex;
-        align-items: center; } }
+        align-items: center; }
+  .co-fact {
+    background: yellow; } }
 
 /*# sourceMappingURL=styles.css.map */
