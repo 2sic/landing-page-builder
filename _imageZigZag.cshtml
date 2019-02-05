@@ -17,12 +17,7 @@
         @foreach (var data in AsDynamic(Data["Default"]))
         {
         <div class="row">         
-            @{var divOrderClass = "";}
-            @if ((i % 2) == 0) {
-                divOrderClass = "order-md-2";
-            }              
-            
-            <div class="col-12 col-md-6 mb-4 sc-element @divOrderClass">
+            <div class="col-12 col-md-6 mb-4 sc-element @((i % 2) == 0 ? "order-md-2" : "")">
                 @Edit.Toolbar(data)
                 <h5>@data.MicroTitle</h5>
                 <h1>@data.Title</h1>

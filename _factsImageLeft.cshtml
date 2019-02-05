@@ -16,26 +16,21 @@
         @{int i = 0;}
         @foreach (var fact in AsDynamic(Data["Default"]))
         {
-        <div class="row">         
-            @{var divOrderClass = "";}
-            @if ((i % 2) == 0) {
-                divOrderClass = "order-md-2";
-            }              
-            
-            <div class="col-12 col-md-6 mb-4 sc-element @divOrderClass">
-                @Edit.Toolbar(fact)
-                <h5>@fact.MicroTitle</h5>
-                <h1>@fact.Title</h1>
-                <div class="co-text mb-4">
-                    @Html.Raw(fact.Body)
+            <div class="row">         
+                <div class="col-12 col-md-6 mb-4 sc-element @((i % 2) == 0 ? "order-md-2" : "")">
+                    @Edit.Toolbar(fact)
+                    <h5>@fact.MicroTitle</h5>
+                    <h1>@fact.Title</h1>
+                    <div class="co-text mb-4">
+                        @Html.Raw(fact.Body)
+                    </div>
+                    <a href="#" class="btn btn-primary">CTA Button</a>
                 </div>
-                <a href="#" class="btn btn-primary">CTA Button</a>
+                <div class="col-12 col-md-6">
+                    <img class="img-fluid" src="@fact.Image" alt="@fact.Title">
+                </div>
             </div>
-            <div class="col-12 col-md-6">
-                <img class="img-fluid" src="@fact.Image" alt="@fact.Title">
-            </div>
-        </div>
-        i++;
+            i++;
         }
     </div>
 </div>
