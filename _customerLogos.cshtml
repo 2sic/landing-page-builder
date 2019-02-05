@@ -1,6 +1,6 @@
 @RenderPage("_sharedAssets.cshtml")
 
-<div class="co-container-outer co-customer-logos">
+<div class="co-container-outer co-customer-logos @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "")" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
     <div class="co-container-inner">
         <div class="row justify-content-center">
             <div class="col-12 mb-4 text-center sc-element">

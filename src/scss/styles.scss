@@ -4,6 +4,13 @@
 
 @media all {
   .co-container-outer {
+
+    &.co-backgroundimage {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    
     .co-container-inner {
       margin: 0 auto;
       max-width: 1200px;
