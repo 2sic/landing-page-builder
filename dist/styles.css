@@ -47,6 +47,8 @@
         display: flex;
         align-items: center; }
   .co-fact {
-    background: yellow; } }
+    background: yellow; }
+  .co-image-zig-zag .co-container-inner {
+    max-width: 100%; } }
 
 /*# sourceMappingURL=styles.css.map */

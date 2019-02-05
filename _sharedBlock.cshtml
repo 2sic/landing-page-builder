@@ -6,9 +6,5 @@
         <div class="co-text mb-4">
             @Html.Raw(ListContent.Body)
         </div>
-
-        @foreach (var fact in AsDynamic(ListContent.CTA)) {
-            <a href="#" class="btn btn-primary">@fact.Label</a>
-        }
     </div>
 </div>

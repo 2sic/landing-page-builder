@@ -13,12 +13,13 @@
                 <div class="co-text mb-4">
                     @Html.Raw(Content.Body)
                 </div>
-                <a href="#" class="btn btn-primary">CTA Button</a>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 mb-4">
                 <img class="img-fluid" src="@Content.Image" alt="@Content.Title">
             </div>
         </div>
+
+        @RenderPage("_sharedButton.cshtml")
     </div>
 </div>
         
