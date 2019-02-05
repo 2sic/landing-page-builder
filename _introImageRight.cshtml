@@ -1,11 +1,12 @@
 @RenderPage("_sharedAssets.cshtml")
 
-<div class="co-container-outer co-intro @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "")" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
+<div class="co-container-outer position-relative co-intro @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "")" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
+    <div class="co-backgroundimage-overlay @ListContent.Presentation.BGImageEffects"></div>
     <div class="co-container-inner sc-element">
         @RenderPage("_sharedBlock.cshtml")
 
         <div class="row">
-            <div class="col-12 col-md-6 order-md-2 mb-4 sc-element">
+            <div class="col-12 col-md-6 mb-4 sc-element">
                 @Edit.Toolbar(Content)  
                 <h5>@Content.MicroTitle</h5>
                 <h1>@Content.Title</h1>

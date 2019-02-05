@@ -10,6 +10,33 @@
       background-repeat: no-repeat;
       background-size: cover;
     }
+
+    .co-backgroundimage-overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      &.co-bg-effect-lighter {
+        background-color: white;
+        opacity: .7;
+      }
+
+      &.co-bg-effect-darker {
+        background-color: black;
+        opacity: .7;
+      }
+    }
+
+    &.co-text-lighter {
+      color: white;
+    }
+
+    &.co-text-darker {
+      color: black;
+    }
     
     .co-container-inner {
       margin: 0 auto;
