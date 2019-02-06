@@ -1,3 +1,7 @@
-@foreach (var cta in AsDynamic(ListContent.CTA)) {
-    <a href="@cta.Link" class="btn btn-primary">@cta.Label</a>
-}
+<div class="row">
+    <div class="col-12">
+        @foreach (var cta in AsDynamic(ListContent.CTA)) {
+            <a href="@cta.Link" class="btn btn-primary">@cta.Label</a>
+        }
+    </div>
+</div>
