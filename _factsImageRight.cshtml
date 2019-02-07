@@ -24,7 +24,10 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-6 mb-4">
-                    <img class="img-fluid" src="@fact.Image" alt="@fact.Title">
+                    @if (!String.IsNullOrEmpty(@fact.Image))
+                    {
+                        <img class="img-fluid" src="@fact.Image" alt="@fact.Title">
+                    }
                 </div>
             </div>
             i++;
