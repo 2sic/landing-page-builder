@@ -161,9 +161,11 @@
   // Start Intro
   .co-intro {
     .co-container-inner {
-      min-height: 80vh;
-      height:100vh;
-      max-height:80vh;
+      @include media-breakpoint-up(md) {
+        min-height: 80vh;
+        height:100vh;
+        max-height:80vh;
+      }
 
       .co-intro-wrapper {
         width: 100%;
@@ -188,10 +190,15 @@
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+        min-height: 50vh;
+
+        @include media-breakpoint-up(md) {
+          min-height: 0;
+        }
       }
 
       .co-zig-zag-content {
-        padding: $grid-gutter-width*1.5;
+        padding: $grid-gutter-width;
 
         @include media-breakpoint-up(md) {
           padding: $grid-gutter-width*3;
@@ -218,6 +225,8 @@
       }
 
       figure {
+        position: relative;
+        z-index: 1;
         text-align: center;
         margin: 0;
 
@@ -237,9 +246,12 @@
     figure {
       text-align: center;
 
-      img {
-        max-width: 160px;
+      img {        
         margin: 0 auto;
+
+        @include media-breakpoint-up(md) {
+          max-width: 160px;
+        }
       }
     }
   }

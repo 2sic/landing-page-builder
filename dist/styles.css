@@ -100,13 +100,17 @@
         font-size: 12px;
         font-weight: bold;
         position: absolute;
-        left: 20px; }
+        left: 20px; } }
+
+@media all and (min-width: 768px) {
   .co-intro .co-container-inner {
     min-height: 80vh;
     height: 100vh;
-    max-height: 80vh; }
-    .co-intro .co-container-inner .co-intro-wrapper {
-      width: 100%; }
+    max-height: 80vh; } }
+
+@media all {
+  .co-intro .co-container-inner .co-intro-wrapper {
+    width: 100%; }
   .co-image-zig-zag.sc-element .sc-menu {
     right: auto !important;
     left: 5px !important; }
@@ -116,9 +120,15 @@
     .co-image-zig-zag .co-container-inner .co-zig-zag-image {
       background-position: center;
       background-size: cover;
-      background-repeat: no-repeat; }
+      background-repeat: no-repeat;
+      min-height: 50vh; } }
+    @media all and (min-width: 768px) {
+      .co-image-zig-zag .co-container-inner .co-zig-zag-image {
+        min-height: 0; } }
+
+@media all {
     .co-image-zig-zag .co-container-inner .co-zig-zag-content {
-      padding: 45px; } }
+      padding: 30px; } }
     @media all and (min-width: 768px) {
       .co-image-zig-zag .co-container-inner .co-zig-zag-content {
         padding: 90px; } }
@@ -135,6 +145,8 @@
         padding-top: 90px;
         border-radius: .25rem; }
     .co-customer-faces .co-card figure {
+      position: relative;
+      z-index: 1;
       text-align: center;
       margin: 0; }
       .co-customer-faces .co-card figure img {
@@ -146,7 +158,9 @@
   .co-customer-logos figure {
     text-align: center; }
     .co-customer-logos figure img {
-      max-width: 160px;
       margin: 0 auto; } }
+    @media all and (min-width: 768px) {
+      .co-customer-logos figure img {
+        max-width: 160px; } }
 
 /*# sourceMappingURL=styles.css.map */
