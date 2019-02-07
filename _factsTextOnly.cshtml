@@ -1,6 +1,7 @@
 @RenderPage("_sharedAssets.cshtml", new { parts = "styles,scripts"})
 
-<section class="co-container-outer position-relative co-fact @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "")" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
+<section class="co-container-outer position-relative co-fact @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "") sc-element" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
+    @Edit.Toolbar(ListContent)
     <div class="co-backgroundimage-overlay @ListContent.Presentation.BGImageEffects"></div>
     <div class="co-container-inner">
         @RenderPage("_sharedBlock.cshtml")
@@ -22,13 +23,16 @@
                     <div class="co-text mb-4">
                         @Html.Raw(fact.Body)
                     </div>
-                    <div class="co-list mb-5">
-                        @Html.Raw(fact.List)
+                    <div class="co-list mb-5 text-left">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-sm-8 col-md-6">
+                                 @Html.Raw(fact.List)
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         }
-
         @RenderPage("_sharedButton.cshtml")
     </div>
 </section>

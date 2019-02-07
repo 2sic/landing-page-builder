@@ -7,6 +7,8 @@
     background-color: #f8f9fa; }
   .co-container-outer.co-bg-dark {
     background-color: #343a40; }
+  .co-container-outer.co-bg-primary {
+    background-color: #007bff; }
   .co-container-outer .co-backgroundimage-overlay {
     position: absolute;
     top: 0;
@@ -15,13 +17,18 @@
     width: 100%;
     height: 100%; }
     .co-container-outer .co-backgroundimage-overlay.co-bg-effect-lighter {
-      background-color: white;
+      background-color: #f8f9fa;
       opacity: .7; }
     .co-container-outer .co-backgroundimage-overlay.co-bg-effect-darker {
       background-color: #343a40;
       opacity: .7; }
   .co-container-outer.co-text-lighter {
-    color: white; }
+    color: #fff; }
+    .co-container-outer.co-text-lighter .co-list ul li:before {
+      color: #fff; }
+    .co-container-outer.co-text-lighter .co-list ul ol li:before {
+      color: #007bff;
+      background-color: #fff; }
   .co-container-outer.co-text-darker {
     color: black; }
   .co-container-outer .co-container-inner {
@@ -31,8 +38,8 @@
     overflow: hidden;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 30px;
-    padding-bottom: 30px; } }
+    padding-top: 45px;
+    padding-bottom: 45px; } }
   @media all and (min-width: 768px) {
     .co-container-outer .co-container-inner {
       padding-left: 45px;
@@ -49,6 +56,79 @@
   .co-intro .co-container-inner {
     min-height: 80vh; }
     .co-intro .co-container-inner .co-intro-wrapper {
-      width: 100%; } }
+      width: 100%; }
+  .co-fact .co-list ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+    .co-fact .co-list ul li {
+      padding: 0;
+      margin: 0;
+      padding-left: 35px;
+      position: relative;
+      line-height: 24px;
+      margin-bottom: 12px; }
+      .co-fact .co-list ul li:before {
+        content: "\f058";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 400;
+        font-size: 23px;
+        color: #007bff;
+        position: absolute;
+        left: 0; }
+  .co-fact .co-list ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: li; }
+    .co-fact .co-list ol li {
+      padding: 0;
+      counter-increment: li;
+      margin: 0;
+      padding-left: 40px;
+      position: relative;
+      line-height: 24px;
+      margin-bottom: 12px; }
+      .co-fact .co-list ol li:before {
+        content: counter(li);
+        color: #fff;
+        display: block;
+        width: 26px;
+        height: 26px;
+        background-color: #007bff;
+        margin-left: -1.5em;
+        margin-right: 0.5em;
+        text-align: center;
+        line-height: 26px;
+        border-radius: 50%;
+        font-size: 12px;
+        font-weight: bold;
+        position: absolute;
+        left: 20px; }
+  .co-customer-faces .co-card {
+    color: #343a40; }
+    .co-customer-faces .co-card .card {
+      background-color: transparent;
+      border: 0px; }
+      .co-customer-faces .co-card .card .card-body {
+        box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        padding-top: 90px;
+        border-radius: .25rem; }
+    .co-customer-faces .co-card figure {
+      text-align: center;
+      margin: 0; }
+      .co-customer-faces .co-card figure img {
+        margin: 0 auto;
+        max-width: 120px;
+        box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.2);
+        margin-bottom: -60px;
+        position: relative;
+        z-index: 50; }
+  .co-customer-logos figure {
+    text-align: center; }
+    .co-customer-logos figure img {
+      max-width: 160px;
+      margin: 0 auto; } }
 
 /*# sourceMappingURL=styles.css.map */

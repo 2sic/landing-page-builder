@@ -1,32 +1,37 @@
 @RenderPage("_sharedAssets.cshtml", new { parts = "styles,scripts"})
 
-<div class="co-container-outer position-relative co-customer-faces @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "")" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
+<div class="co-container-outer position-relative co-customer-faces @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "") sc-element" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
+    @Edit.Toolbar(ListContent)
     <div class="co-backgroundimage-overlay @ListContent.Presentation.BGImageEffects"></div>
     <div class="co-container-inner">
         @RenderPage("_sharedBlock.cshtml")
         
-        <div class="row">   
+        <div class="row mb-5 co-card justify-content-center">   
             @foreach (var customer in AsDynamic(Data["Default"]))
-            {                
-                <div class="col-12 col-md-3 mb-4">
-                    @if (!String.IsNullOrEmpty(customer.Image))
-                    {
-                        <div class="co-person-image-wrapper">
-                            <img class="img-fluid" src="@customer.Image" alt="@customer.Name">
+            {    
+
+                <div class="col-12 col-sm-6 col-lg-4 mb-5">
+                   
+                        <div class="card h-100 text-center">
+                            <figure>
+                              @if (!String.IsNullOrEmpty(customer.Image))
+                                {
+                                <img class="card-img-top rounded-circle" src="@customer.Image?w=400&amp;h=400&amp;scale=both&amp;mode=crop&amp;quality=70" alt="@customer.Name">
+                                }
+                                else
+                                {
+                                    <div class="co-person-placeholder"></div>
+                                }
+                            </figure>
+                            <div class="card-body sc-element">
+                                @Edit.Toolbar(customer)
+                                <h6 class="card-title">@customer.Name</h6>
+                                <div class="card-text">
+                                    @Html.Raw(customer.Body)
+                                </div>
+                            </div>
                         </div>
-                    }
-                    else
-                    {
-                        <div class="co-person-placeholder"></div>
-                    }
-                </div>
-                <div class="col-12 col-md-3 mb-4 sc-element">
-                    @Edit.Toolbar(customer)
-                    <strong>@customer.Name</strong>
-                    <div class="co-text mb-4">
-                        @Html.Raw(customer.Body)
-                    </div>
-                </div>                
+                </div>     
             }
         </div>
 

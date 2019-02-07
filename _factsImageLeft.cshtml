@@ -1,6 +1,7 @@
 @RenderPage("_sharedAssets.cshtml", new { parts = "styles,scripts"})
 
-<section class="co-container-outer position-relative co-fact @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "")" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
+<section class="co-container-outer position-relative co-fact @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "") sc-element" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
+    @Edit.Toolbar(ListContent)
     <div class="co-backgroundimage-overlay @ListContent.Presentation.BGImageEffects"></div>
     <div class="co-container-inner">
         @RenderPage("_sharedBlock.cshtml")
@@ -26,7 +27,7 @@
                 <div class="col-12 col-md-6 mb-4">
                     @if (!String.IsNullOrEmpty(@fact.Image))
                     {
-                        <img class="img-fluid" src="@fact.Image" alt="@fact.Title">
+                        <img class="img-fluid" src="@fact.Image?w=1050&amp;scale=both&amp;mode=max&amp;quality=70" alt="@fact.Title">
                     }
                 </div>
             </div>
