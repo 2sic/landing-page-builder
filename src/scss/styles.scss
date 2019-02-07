@@ -1,16 +1,19 @@
 @import 'functions';
 @import "../../../_default/Skins/2sxcLandingPageBuilder-B4/node_modules/bootstrap/scss/mixins/_breakpoints.scss";
 @import 'variables.scss'; //Layout Stylings
-
 @media all {
   .co-container-outer {
-
     &.co-backgroundimage {
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
     }
-
+    &.co-bg-light {
+      background-color: $light
+    }
+    &.co-bg-dark {
+      background-color: $dark
+    }
     .co-backgroundimage-overlay {
       position: absolute;
       top: 0;
@@ -18,69 +21,54 @@
       left: 0;
       width: 100%;
       height: 100%;
-
       &.co-bg-effect-lighter {
         background-color: white;
         opacity: .7;
       }
-
       &.co-bg-effect-darker {
-        background-color: black;
+        background-color: $dark;
         opacity: .7;
       }
     }
-
     &.co-text-lighter {
       color: white;
     }
-
     &.co-text-darker {
       color: black;
     }
-    
     .co-container-inner {
       margin: 0 auto;
       max-width: 1200px;
+      width: 100%;
       overflow: hidden;
       padding-left: $grid-gutter-width/1.5;
       padding-right: $grid-gutter-width/1.5;
       padding-top: $grid-gutter-width;
       padding-bottom: $grid-gutter-width;
-
       @include media-breakpoint-up(md) {
         padding-left: $grid-gutter-width*1.5;
         padding-right: $grid-gutter-width*1.5;
         padding-top: $grid-gutter-width*2.5;
         padding-bottom: $grid-gutter-width*2.5;
       }
-    }
-  }
-
-  // Start Intro
-  .co-intro {
-    background: red;
-
-    .co-container-inner {
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-
-      .row {
-        display: flex;
-        align-items: center;
+      h5 {
+        font-size: $font-size-sm;
+        letter-spacing: 1px;
+        
+      }
+      .btn {
+       padding: 10px 15px;
       }
     }
-  }
-
-  // Start Facts
-  .co-fact {
-    background: yellow;
-  }
-
-  .co-image-zig-zag {
+  } // Start Intro
+  .co-intro {
     .co-container-inner {
-      max-width: 100%;
+      min-height: 80vh;
+      .co-intro-wrapper {
+        width: 100%;
+      }
     }
-  }
+  } // Start Facts
+  .co-fact {}
+  .co-image-zig-zag {}
 }

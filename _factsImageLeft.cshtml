@@ -1,6 +1,6 @@
 @RenderPage("_sharedAssets.cshtml", new { parts = "styles,scripts"})
 
-<div class="co-container-outer position-relative co-fact @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "")" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
+<section class="co-container-outer position-relative co-fact @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "")" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
     <div class="co-backgroundimage-overlay @ListContent.Presentation.BGImageEffects"></div>
     <div class="co-container-inner">
         @RenderPage("_sharedBlock.cshtml")
@@ -8,14 +8,14 @@
         @{int i = 0;}
         @foreach (var fact in AsDynamic(Data["Default"]))
         {
-            <div class="row">         
+            <div class="row align-items-center mb-5">         
                 <div class="col-12 col-md-6 mb-4 sc-element @((i % 2) == 0 ? "order-md-2" : "")">
                     @Edit.Toolbar(fact)
                     @if (!String.IsNullOrEmpty(@fact.MicroTitle))
                     {
                         <h5>@fact.MicroTitle</h5>
                     }
-                    <h1>@fact.Title</h1>
+                    <h3>@fact.Title</h3>
                     <div class="co-text mb-4">
                         @Html.Raw(fact.Body)
                     </div>
@@ -29,4 +29,4 @@
 
         @RenderPage("_sharedButton.cshtml")
     </div>
-</div>
+</section>

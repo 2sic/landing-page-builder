@@ -1,13 +1,16 @@
-<div class="row justify-content-center">
-    <div class="col-12 mb-4 text-center sc-element">
-        @Edit.Toolbar(ListContent)
-        @if (!String.IsNullOrEmpty(@ListContent.MicroTitle))
-        {
-            <h4>@ListContent.MicroTitle</h4>
-        }
-        <h2>@ListContent.Title</h2>
-        <div class="co-text mb-4">
-            @Html.Raw(ListContent.Body)
+@if (!String.IsNullOrEmpty(@ListContent.Title))
+{
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6 mb-5 text-center sc-element">
+            @Edit.Toolbar(ListContent)
+            @if (!String.IsNullOrEmpty(@ListContent.MicroTitle))
+            {
+                <h5>@ListContent.MicroTitle</h5>
+            }
+            <h2 class="display-4">@ListContent.Title</h2>
+            <div class="co-text mb-5">
+                @Html.Raw(ListContent.Body)
+            </div>
         </div>
     </div>
-</div>
+}

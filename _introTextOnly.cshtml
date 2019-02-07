@@ -1,28 +1,34 @@
 @RenderPage("_sharedAssets.cshtml", new { parts = "styles,scripts"})
 
-<div class="co-container-outer position-relative co-intro @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "")" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
+<section class="co-container-outer position-relative co-intro @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "")" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
     <div class="co-backgroundimage-overlay @ListContent.Presentation.BGImageEffects"></div>
-    <div class="co-container-inner sc-element">
-        @RenderPage("_sharedBlock.cshtml")
-
-        <div class="row justify-content-center">            
-            <div class="col-12 col-md-8 text-center mb-4 sc-element">
-                @Edit.Toolbar(Content)
-                @if (!String.IsNullOrEmpty(Content.Icon))
-                {
-                    <i class="co-icon text-primary fas @Content.Icon" aria-hidden="true"></i>
-                }
-                @if (!String.IsNullOrEmpty(@Content.MicroTitle))
-                {
-                    <h5>@Content.MicroTitle</h5>
-                }
-                <h1>@Content.Title</h1>
-                <div class="co-text mb-4">
-                    @Html.Raw(Content.Body)
+    <div class="co-container-inner d-flex align-items-center sc-element">
+        <div class="co-intro-wrapper">
+            @RenderPage("_sharedBlock.cshtml")
+            <div class="row justify-content-center">            
+                <div class="col-12 col-md-7 text-center mb-4 sc-element">
+                    @Edit.Toolbar(Content)
+                    @if (!String.IsNullOrEmpty(Content.Icon))
+                    {
+                        <i class="co-icon text-primary fas @Content.Icon" aria-hidden="true"></i>
+                    }
+                    @if (!String.IsNullOrEmpty(@Content.MicroTitle))
+                    {
+                        <h5>@Content.MicroTitle</h5>
+                    }
+                    <h1 class="display-4">@Content.Title</h1>
+                    <div class="co-text mb-5">
+                        @Html.Raw(Content.Body)
+                    </div>
+                    @if(Content.CTA.Count > 0)
+                    {
+                        foreach (var cta in AsDynamic(Content.CTA)) {
+                            <a href="@cta.Link" class="btn btn-primary">@cta.Label</a>
+                        }
+                    }
                 </div>
             </div>
+            @RenderPage("_sharedButton.cshtml")
         </div>
-
-        @RenderPage("_sharedButton.cshtml")
     </div>
-</div>
+</section>
