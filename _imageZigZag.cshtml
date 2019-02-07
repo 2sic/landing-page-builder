@@ -1,37 +1,38 @@
 @RenderPage("_sharedAssets.cshtml", new { parts = "styles,scripts"})
 
-<section class="co-container-outer position-relative co-image-zig-zag @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "") sc-element" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
+<section class="co-container-outer position-relative co-image-zig-zag @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor sc-element">
     @Edit.Toolbar(ListContent)
     <div class="co-backgroundimage-overlay @ListContent.Presentation.BGImageEffects"></div>
     <div class="co-container-inner">
         @RenderPage("_sharedBlock.cshtml")
+        
         @{int i = 0;}
         @foreach (var data in AsDynamic(Data["Default"]))
         {
-        <div class="co-zig-zag-wrapper">
-        <div class="">
-        </div>
-        <div class="row">         
-            <div class="col-12 col-md-6 mb-4 sc-element @((i % 2) == 0 ? "order-md-2" : "")">
-                @Edit.Toolbar(data)
-                @if (!String.IsNullOrEmpty(@data.MicroTitle))
-                {
-                    <h5>@data.MicroTitle</h5>
-                }
-                <h1>@data.Title</h1>
-                <div class="co-text mb-4">
-                    @Html.Raw(data.Body)
-                </div>
-                <div class="co-list mb-5">
-                    @Html.Raw(data.List)
+        <div class="row no-gutters">         
+            <div class="col-12 col-md-6 sc-element @((i % 2) == 0 ? "order-md-2" : "")">
+                <div class="d-flex align-items-center h-100">
+                    <div class="co-zig-zag-content">
+                    @Edit.Toolbar(data)
+                    @if (!String.IsNullOrEmpty(@data.MicroTitle))
+                    {
+                        <h5>@data.MicroTitle</h5>
+                    }
+                    <h1>@data.Title</h1>
+                    <div class="co-text mb-4">
+                        @Html.Raw(data.Body)
+                    </div>
+                    <div class="co-list">
+                        @Html.Raw(data.List)
+                    </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 mb-4">
-                <img class="img-fluid" src="@data.Image" alt="@data.Title">
-            </div>
+            <div class="col-12 col-md-6 co-zig-zag-image" style="@((!String.IsNullOrEmpty(data.Image)) ? "background-image:url('"+data.Image+"?w=2560&scale=both&quality=70')" : "")"></div>
         </div>
         i++;
         }
+
         @RenderPage("_sharedButton.cshtml")
     </div>
 </section>

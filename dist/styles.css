@@ -53,22 +53,18 @@
       letter-spacing: 1px; }
     .co-container-outer .co-container-inner .btn {
       padding: 10px 15px; }
-  .co-intro .co-container-inner {
-    min-height: 80vh; }
-    .co-intro .co-container-inner .co-intro-wrapper {
-      width: 100%; }
-  .co-fact .co-list ul {
+  .co-container-outer .co-list ul {
     list-style-type: none;
     margin: 0;
     padding: 0; }
-    .co-fact .co-list ul li {
+    .co-container-outer .co-list ul li {
       padding: 0;
       margin: 0;
       padding-left: 35px;
       position: relative;
       line-height: 24px;
       margin-bottom: 12px; }
-      .co-fact .co-list ul li:before {
+      .co-container-outer .co-list ul li:before {
         content: "\f058";
         font-family: "Font Awesome 5 Free";
         font-weight: 400;
@@ -76,12 +72,12 @@
         color: #007bff;
         position: absolute;
         left: 0; }
-  .co-fact .co-list ol {
+  .co-container-outer .co-list ol {
     margin: 0;
     padding: 0;
     list-style: none;
     counter-reset: li; }
-    .co-fact .co-list ol li {
+    .co-container-outer .co-list ol li {
       padding: 0;
       counter-increment: li;
       margin: 0;
@@ -89,7 +85,7 @@
       position: relative;
       line-height: 24px;
       margin-bottom: 12px; }
-      .co-fact .co-list ol li:before {
+      .co-container-outer .co-list ol li:before {
         content: counter(li);
         color: #fff;
         display: block;
@@ -105,6 +101,29 @@
         font-weight: bold;
         position: absolute;
         left: 20px; }
+  .co-intro .co-container-inner {
+    min-height: 80vh;
+    height: 100vh;
+    max-height: 80vh; }
+    .co-intro .co-container-inner .co-intro-wrapper {
+      width: 100%; }
+  .co-image-zig-zag.sc-element .sc-menu {
+    right: auto !important;
+    left: 5px !important; }
+  .co-image-zig-zag .co-container-inner {
+    max-width: 100%;
+    padding: 0; }
+    .co-image-zig-zag .co-container-inner .co-zig-zag-image {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat; }
+    .co-image-zig-zag .co-container-inner .co-zig-zag-content {
+      padding: 45px; } }
+    @media all and (min-width: 768px) {
+      .co-image-zig-zag .co-container-inner .co-zig-zag-content {
+        padding: 90px; } }
+
+@media all {
   .co-customer-faces .co-card {
     color: #343a40; }
     .co-customer-faces .co-card .card {
@@ -123,8 +142,7 @@
         max-width: 120px;
         box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.2);
         margin-bottom: -60px;
-        position: relative;
-        z-index: 50; }
+        position: relative; }
   .co-customer-logos figure {
     text-align: center; }
     .co-customer-logos figure img {
