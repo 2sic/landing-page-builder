@@ -9,6 +9,10 @@
     background-color: #343a40; }
   .co-container-outer.co-bg-primary {
     background-color: #007bff; }
+    .co-container-outer.co-bg-primary a.btn-primary {
+      background-color: #f8f9fa;
+      border-color: #f8f9fa;
+      color: #007bff; }
   .co-container-outer .co-backgroundimage-overlay {
     position: absolute;
     top: 0;

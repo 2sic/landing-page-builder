@@ -11,15 +11,23 @@
     }
 
     &.co-bg-light {
-      background-color: $light
+      background-color: $light;
     }
 
     &.co-bg-dark {
-      background-color: $dark
+      background-color: $dark;
     }
 
     &.co-bg-primary {
-      background-color: $primary
+      background-color: $primary;
+      
+      a {
+        &.btn-primary {
+          background-color: $light;
+          border-color: $light;
+          color: $primary;
+        }
+      }
     }
 
     .co-backgroundimage-overlay {
