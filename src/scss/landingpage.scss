@@ -51,7 +51,7 @@
       width: 100%;
       height: 100%;
 
-      &.co-bg-effect-lighter {
+      &.co-bg-effect-brighter {
         background-color: $light;
         opacity: .7;
       }
@@ -62,7 +62,7 @@
       }
     }
 
-    &.co-text-lighter {
+    &.co-text-brighter {
       color: $white;
 
       .co-list {
