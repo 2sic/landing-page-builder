@@ -1,10 +1,10 @@
-@RenderPage("_sharedAssets.cshtml", new { parts = "styles,scripts"})
+@RenderPage("./shared/_Assets.cshtml", new { parts = "styles,scripts"})
 
 <div class="co-container-outer position-relative co-customer-logos @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "") sc-element" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
     @Edit.Toolbar(ListContent)
     <div class="co-backgroundimage-overlay @ListContent.Presentation.BGImageEffects"></div>
     <div class="co-container-inner">
-        @RenderPage("_sharedBlock.cshtml")
+        @RenderPage("./shared/_Block.cshtml")
             <div class="row justify-content-center">   
                 @foreach (var customer in AsDynamic(Data["Default"]))
                 {    
@@ -28,6 +28,6 @@
                     </div>     
                 }
         </div>
-        @RenderPage("_sharedButton.cshtml")
+        @RenderPage("./shared/_Button.cshtml")
     </div>
 </div>

@@ -1,10 +1,10 @@
-@RenderPage("_sharedAssets.cshtml", new { parts = "styles,scripts"})
+@RenderPage("./shared/_Assets.cshtml", new { parts = "styles,scripts"})
 
 <section class="co-container-outer position-relative co-image-zig-zag @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor sc-element">
     @Edit.Toolbar(ListContent)
     <div class="co-backgroundimage-overlay @ListContent.Presentation.BGImageEffects"></div>
     <div class="co-container-inner">
-        @RenderPage("_sharedBlock.cshtml")
+        @RenderPage("./shared/_Block.cshtml")
         
         @{int i = 0;}
         @foreach (var data in AsDynamic(Data["Default"]))
@@ -33,6 +33,6 @@
         i++;
         }
 
-        @RenderPage("_sharedButton.cshtml")
+        @RenderPage("./shared/_Button.cshtml")
     </div>
 </section>

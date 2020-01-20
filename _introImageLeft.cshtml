@@ -1,4 +1,4 @@
-@RenderPage("_sharedAssets.cshtml", new { parts = "styles,scripts"})
+@RenderPage("./shared/_Assets.cshtml", new { parts = "styles,scripts"})
 
 <section class="co-container-outer position-relative co-intro @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "") sc-element" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
     @Edit.Toolbar(ListContent)
@@ -6,7 +6,7 @@
     <div class="co-container-inner  d-flex align-items-center sc-element">
         <div class="co-intro-wrapper">
 
-            @RenderPage("_sharedBlock.cshtml")
+            @RenderPage("./shared/_Block.cshtml")
             <div class="row align-items-center">
                 <div class="col-12 col-md-6 mb-5 order-md-2 sc-element">
                     @Edit.Toolbar(Content)  
@@ -35,7 +35,7 @@
                     }
                 </div>
             </div>
-            @RenderPage("_sharedButton.cshtml")
+            @RenderPage("./shared/_Button.cshtml")
         </div>
     </div>
 </section>

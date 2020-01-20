@@ -1,10 +1,10 @@
-@RenderPage("_sharedAssets.cshtml", new { parts = "styles,scripts"})
+@RenderPage("./shared/_Assets.cshtml", new { parts = "styles,scripts"})
 
 <section class="co-container-outer position-relative co-fact @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "") sc-element" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
     @Edit.Toolbar(ListContent)
     <div class="co-backgroundimage-overlay @ListContent.Presentation.BGImageEffects"></div>
     <div class="co-container-inner">
-        @RenderPage("_sharedBlock.cshtml")
+        @RenderPage("./shared/_Block.cshtml")
         
         @{int i = 0;}
         @foreach (var fact in AsDynamic(Data["Default"]))
@@ -34,6 +34,6 @@
             i++;
         }
 
-        @RenderPage("_sharedButton.cshtml")
+        @RenderPage("./shared/_Button.cshtml")
     </div>
 </section>

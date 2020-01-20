@@ -1,4 +1,4 @@
-@RenderPage("_sharedAssets.cshtml", new { parts = "styles,scripts"})
+@RenderPage("./shared/_Assets.cshtml", new { parts = "styles,scripts"})
 
 <section class="co-container-outer position-relative co-cta-standalone @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "") sc-element" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
     @Edit.Toolbar(ListContent)
