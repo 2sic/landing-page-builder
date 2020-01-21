@@ -14,7 +14,9 @@ function initUrlTracking() {
   const utmMedium = urlParams.get('utm_medium');
   const utmCampaign = urlParams.get('utm_campaign');
 
-  doLandingPageTracking('event', utmSource, utmMedium, utmCampaign);
+  if(utmSource !== null && utmMedium !== null && utmCampaign !== null) {
+    doLandingPageTracking('event', utmSource, utmMedium, utmCampaign);
+  }
 }
 
 function initEventTracking() {
