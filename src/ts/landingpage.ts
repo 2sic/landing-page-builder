@@ -2,7 +2,8 @@ window.onload = function () {
   initUrlTracking();
   initEventTracking();
 
-  ga('gtm1.send', 'pageview', location.pathname, 'landingpage');
+  // ga('gtm1.send', 'pageview', location.pathname, 'landingpage');
+  doLandingPageTracking('event', 'pageview', location.pathname, 'landingpage');
 }
 
 function initUrlTracking() {
