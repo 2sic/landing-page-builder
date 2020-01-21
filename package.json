@@ -1,19 +1,16 @@
 {
-  "name": "2sic-standard-skin-template",
-  "version": "03.05.00",
-  "description": "The default skin template for 2sic websites",
+  "name": "2sic-landingpage",
+  "version": "01.00.00",
+  "description": "The 2sxc Landing Page Builder",
   "main": "(none)",
   "scripts": {
-    "build": "webpack",
-    "copy-lib": "npm run copy-lib-jquery & npm run copy-lib-bootstrap-js & npm run copy-lib-bootstrap-css",
-    "// 2dm shouldn't use: copy-lib-jquery": "cpx \"node_modules\\jquery\\dist\\jquery.min.js\" \"dist\\lib\"",
-    "copy-lib-bootstrap-js": "cpx \"node_modules\\bootstrap\\dist\\js\\bootstrap.min.js\" \"dist\\lib\"",
-    "// 2dm shouldn't use: copy-lib-bootstrap-css": "cpx \"node_modules\\bootstrap\\dist\\css\\bootstrap.min.css\" \"dist\\lib\""
+    "build": "webpack"
   },
   "author": "2sic internet solutions",
   "license": "MIT",
   "repository": "https://github.com/2sic/dnn-theme-bootstrap4-instant",
   "devDependencies": {
+    "@types/google.analytics": "0.0.40",
     "autoprefixer": "^9.6.4",
     "cpx": "^1.5.0",
     "css-loader": "^2.1.1",

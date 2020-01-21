@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-12 text-center">
         @foreach (var cta in AsDynamic(ListContent.CTA)) {
-            <a href="@cta.Link" class="btn btn-primary">@cta.Label</a>
+            <a href="@cta.Link" class="btn btn-primary" data-id="@cta.EntityId" data-moduleid="@Dnn.Module.ModuleID" data-trackingevent="cta">@cta.Label</a>
         }
     </div>
 </div>

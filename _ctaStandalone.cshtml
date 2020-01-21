@@ -21,7 +21,7 @@
                     @if(Content.CTA.Count > 0)
                     {
                         foreach (var cta in AsDynamic(Content.CTA)) {
-                            <a href="@cta.Link" class="btn btn-primary">@cta.Label</a>
+                            <a href="@cta.Link" class="btn btn-primary" data-id="@cta.EntityId" data-moduleid="@Dnn.Module.ModuleID" data-trackingevent="cta">@cta.Label</a>
                         }
                     }
                 </div>
