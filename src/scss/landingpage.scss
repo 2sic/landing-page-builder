@@ -1,6 +1,5 @@
-@import 'functions';
-@import "../../../_default/Skins/2sxcLandingPageBuilder-B4/node_modules/bootstrap/scss/mixins/_breakpoints.scss";
-@import 'variables.scss'; //Layout Stylings
+@import "../../../_default/Skins/2sxcBootstrap-B4/src/scss/_variables.scss";
+@import "../../../_default/Skins/2sxcBootstrap-B4/node_modules/bootstrap/scss/mixins/_breakpoints.scss";
 
 @media all {
   .co-container-outer {
@@ -63,6 +62,9 @@
     }
 
     &.co-text-brighter {
+      h1,h2,h3,h4,h5 {
+        color:$white;
+      }
       color: $white;
 
       .co-list {
@@ -84,9 +86,11 @@
         }
       }
     }
-
     &.co-text-darker {
-      color: black;
+      h1,h2,h3,h4,h5 {
+        color: $dark;
+      }
+      color: $dark;
     }
 
     .co-container-inner {
