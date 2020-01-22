@@ -67,6 +67,10 @@
       }
       color: $white;
 
+      .co-icon {
+        color: $white;
+      }
+
       .co-list {
         ul {
           li {
@@ -74,23 +78,28 @@
               color: $white;
             }
           }
+        }
 
-          ol {
-            li {
-              &:before {
-                color: $primary;
-                background-color: $white;
-              }
+        ol {
+          li {
+            &:before {
+              color: $primary;
+              background-color: $white;
             }
           }
         }
       }
     }
+
     &.co-text-darker {
       h1,h2,h3,h4,h5 {
         color: $dark;
       }
       color: $dark;
+
+      .co-icon {
+        color: $dark;
+      }
     }
 
     .co-container-inner {
@@ -117,6 +126,10 @@
 
       .btn {
         padding: 10px 15px;
+      }
+
+      .co-icon {
+        color: $dark;
       }
     }
 
@@ -278,4 +291,9 @@
       }
     }
   }
+
+  .co-icon {
+    font-size: 128px;
+  }
+  
 }
