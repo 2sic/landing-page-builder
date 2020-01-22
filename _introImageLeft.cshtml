@@ -3,7 +3,7 @@
 <section class="co-container-outer position-relative co-intro @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "") sc-element" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
     @Edit.Toolbar(ListContent)
     <div class="co-backgroundimage-overlay @ListContent.Presentation.BGImageEffects"></div>
-    <div class="co-container-inner d-flex align-items-center sc-element">
+    <div class="co-container-inner d-flex align-items-center sc-element" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
         <div class="co-intro-wrapper">
 
             @RenderPage("./shared/_Block.cshtml")
@@ -25,10 +25,18 @@
                         }
                     }
                 </div>
-                <div class="col-12 col-md-6 mb-4">
-                    @if (!String.IsNullOrEmpty(@Content.Image))
-                    {
-                        <img class="img-fluid" src="@Content.Image?w=1050&amp;scale=both&amp;mode=max" alt="@Content.Title">
+                <div class="col-12 col-md-6 mb-4 @(Content.UseInnerContent != null && Content.UseInnerContent ? "sc-content-block-list" : "")"
+                    @Edit.ContextAttributes(Content, field: "InnerContent")>
+                    @if (Content.UseInnerContent != null && Content.UseInnerContent) {
+                        foreach (var innerContent in Content.InnerContent)
+                        {
+                            @innerContent.Render();
+                        }
+                    } else {
+                        if (!String.IsNullOrEmpty(@Content.Image))
+                        {
+                            <img class="img-fluid" src="@Content.Image?w=1050&amp;scale=both&amp;mode=max" alt="@Content.Title">
+                        }
                     }
                 </div>
             </div>

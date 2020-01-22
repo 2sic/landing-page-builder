@@ -3,7 +3,7 @@
 <section class="co-container-outer position-relative co-fact @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "") sc-element" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
     @Edit.Toolbar(ListContent)
     <div class="co-backgroundimage-overlay @ListContent.Presentation.BGImageEffects"></div>
-    <div class="co-container-inner">
+    <div class="co-container-inner" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
         @RenderPage("./shared/_Block.cshtml")
         
         @{int i = 0;}
@@ -24,17 +24,24 @@
                         @Html.Raw(fact.List)
                     </div>
                 </div>
-                <div class="col-12 col-md-6 mb-4">
-                    @if (!String.IsNullOrEmpty(@fact.Image))
-                    {
-                        <img class="img-fluid" src="@fact.Image?w=1050&amp;scale=both&amp;mode=max&amp;quality=70" alt="@fact.Title">
-                    }
+                <div class="col-12 col-md-6 mb-4 @(fact.UseInnerContent != null && fact.UseInnerContent ? "sc-content-block-list" : "")" @Edit.ContextAttributes(fact, field: "InnerContent")>
+                    @if (fact.UseInnerContent != null && fact.UseInnerContent) {
+                        foreach (var innerContent in fact.InnerContent)
+                        {
+                            @innerContent.Render();
+                        }
+                    } else {
+                        if (!String.IsNullOrEmpty(@fact.Image))
+                        {
+                            <img class="img-fluid" src="@fact.Image?w=1050&amp;scale=both&amp;mode=max&amp;quality=70" alt="@fact.Title">
+                        }
 
-                    @if (String.IsNullOrEmpty(@fact.Image) && !String.IsNullOrEmpty(@fact.Icon))
-                    {
-                        <div class="text-center">
-                            <i class="co-icon fas @fact.Icon" aria-hidden="true"></i>
-                        </div>
+                        if (String.IsNullOrEmpty(@fact.Image) && !String.IsNullOrEmpty(@fact.Icon))
+                        {
+                            <div class="text-center">
+                                <i class="co-icon fas @fact.Icon" aria-hidden="true"></i>
+                            </div>
+                        }
                     }
                 </div>
             </div>
