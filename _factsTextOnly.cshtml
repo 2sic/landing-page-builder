@@ -4,11 +4,11 @@
 @{ var parts = CreateInstance("shared/_Parts.cshtml"); }
 
 <section class="co-container-outer position-relative co-fact @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @(Text.Has(Header.Presentation.BGImage) ? "co-backgroundimage" : "")" @parts.SectionStyle() @Edit.TagToolbar(Header)>
-    <div class="co-backgroundimage-overlay @Header.Presentation.BGImageEffects"></div>
+    @parts.BackgroundDiv()
     <div class="co-container-inner">
         @RenderPage("./shared/_Block.cshtml")
 
-        @foreach (var fact in AsList(Data["Default"])) {    
+        @foreach (var fact in AsList(Data)) {    
             <div class="row justify-content-center">
                 <div class="col-12 col-md-8 text-center mb-4" @Edit.TagToolbar(fact)>
                     @if (Text.Has(fact.Icon)) {

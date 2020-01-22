@@ -4,12 +4,12 @@
 @{ var parts = CreateInstance("shared/_Parts.cshtml"); }
 
 <div class="co-container-outer position-relative co-customer-faces @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @(Text.Has(Header.Presentation.BGImage) ? "co-backgroundimage" : "")" @parts.SectionStyle() @Edit.TagToolbar(Header)>
-    <div class="co-backgroundimage-overlay @Header.Presentation.BGImageEffects"></div>
+    @parts.BackgroundDiv()
     <div class="co-container-inner">
         @RenderPage("./shared/_Block.cshtml")
         
         <div class="row mb-5 co-card justify-content-center">   
-            @foreach (var customer in AsList(Data["Default"])) {    
+            @foreach (var customer in AsList(Data)) {    
                 <div class="col-12 col-sm-6 col-lg-4 mb-5" @Edit.TagToolbar(customer)>
                         <div class="card h-100 text-center">
                             <figure>

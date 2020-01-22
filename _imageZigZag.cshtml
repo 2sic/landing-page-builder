@@ -4,12 +4,12 @@
 @{ var parts = CreateInstance("shared/_Parts.cshtml"); }
 
 <section class="co-container-outer position-relative co-image-zig-zag @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor" @Edit.TagToolbar(Header)>
-    <div class="co-backgroundimage-overlay @Header.Presentation.BGImageEffects"></div>
+    @parts.BackgroundDiv()
     <div class="co-container-inner">
         @RenderPage("./shared/_Block.cshtml")
         
         @{int i = 0;}
-        @foreach (var data in AsList(Data["Default"])) {
+        @foreach (var data in AsList(Data)) {
         <div class="row no-gutters" @Edit.TagToolbar(data)>         
             <div class="col-12 col-md-6 col-lg-5 @((i % 2) == 0 ? "order-md-2" : "")">
                 <div class="d-flex align-items-center h-100">

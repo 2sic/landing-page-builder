@@ -4,28 +4,28 @@
 @{ var parts = CreateInstance("shared/_Parts.cshtml"); }
 
 <div class="co-container-outer position-relative co-customer-logos @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @(Text.Has(Header.Presentation.BGImage) ? "co-backgroundimage" : "")" @parts.SectionStyle() @Edit.TagToolbar(Header)>
-    <div class="co-backgroundimage-overlay @Header.Presentation.BGImageEffects"></div>
+    @parts.BackgroundDiv()
     <div class="co-container-inner">
         @RenderPage("./shared/_Block.cshtml")
-            <div class="row justify-content-center">   
-                @foreach (var customer in AsList(Data["Default"])) {    
-                    <div class="col-6 col-sm-4 col-lg-3 col-xl-2 mb-4">
-                            <div class="h-100 text-center align-items-center" @Edit.TagToolbar(customer)>
-                                <figure>
-                                @if (Text.Has(customer.Image)) {
-                                    <img class="img-fluid" src="@customer.Image?w=400&amp;scale=both&amp;mode=max&amp;quality=70" alt="@customer.Name">
-                                }
-                                </figure>
-                                @*<div class="card-body sc-element">
-                                
-                                    <h6 class="card-title">@customer.Name</h6>
-                                    <div class="card-text">
-                                        @Html.Raw(customer.Body)
-                                    </div>
-                                </div>*@
+        <div class="row justify-content-center">   
+            @foreach (var customer in AsList(Data)) {    
+                <div class="col-6 col-sm-4 col-lg-3 col-xl-2 mb-4">
+                    <div class="h-100 text-center align-items-center" @Edit.TagToolbar(customer)>
+                        <figure>
+                        @if (Text.Has(customer.Image)) {
+                            <img class="img-fluid" src="@customer.Image?w=400&amp;scale=both&amp;mode=max&amp;quality=70" alt="@customer.Name">
+                        }
+                        </figure>
+                        @*<div class="card-body sc-element">
+                        
+                            <h6 class="card-title">@customer.Name</h6>
+                            <div class="card-text">
+                                @Html.Raw(customer.Body)
                             </div>
-                    </div>     
-                }
+                        </div>*@
+                    </div>
+                </div>     
+            }
         </div>
         @parts.HeaderCta(Header.CTA)
     </div>

@@ -4,7 +4,7 @@
 @{ var parts = CreateInstance("shared/_Parts.cshtml"); }
 
 <section class="co-container-outer position-relative co-cta-standalone @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @(Text.Has(Header.Presentation.BGImage) ? "co-backgroundimage" : "")" @parts.SectionStyle() @Edit.TagToolbar(Header)>
-    <div class="co-backgroundimage-overlay @Header.Presentation.BGImageEffects"></div>
+    @parts.BackgroundDiv()
     <div class="co-container-inner d-flex align-items-center sc-element">
         <div class="co-cta-standalone-wrapper" style="width: 100%">
             <div class="row justify-content-center">            
