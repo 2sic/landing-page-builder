@@ -1,3 +1,5 @@
+@using System.Text.RegularExpressions;
+@using ToSic.Razor.Blade;
 @RenderPage("./shared/_Assets.cshtml")
 
 <section class="co-container-outer position-relative co-intro @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "") sc-element" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
@@ -33,9 +35,41 @@
                             @innerContent.Render();
                         }
                     } else {
-                        if (!String.IsNullOrEmpty(Content.Image))
+                        if (!String.IsNullOrEmpty(Content.Image) && String.IsNullOrEmpty(Content.VideoUrl))
                         {
-                            <img class="img-fluid" src="@Content.Image?w=1050&amp;scale=both&amp;mode=max" alt="@Content.Title">
+                            <img class="img-fluid" src="@Content.Image?w=1050&amp;scale=both&amp;mode=max&amp;quality=70" alt="@Content.Title">
+                        }
+
+                        if (!String.IsNullOrEmpty(Content.Icon) && String.IsNullOrEmpty(Content.Image) && String.IsNullOrEmpty(Content.VideoUrl))
+                        {
+                            <div class="text-center">
+                                <i class="co-icon fas @Content.Icon" aria-hidden="true"></i>
+                            </div>
+                        }
+
+                        if(!String.IsNullOrEmpty(Content.VideoUrl)) {
+                            var youTube = Regex.Match(Content.VideoUrl,
+                                @"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)");
+                            var isYouTube = youTube.Success;
+                            var youTubeUrl = isYouTube
+                                ? "https://www.youtube.com/embed/" + youTube.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent"
+                                : "";
+
+                            <a data-fancybox="fancybox-@Dnn.Module.ModuleID" class="co-video" data-width="1280" data-height="720" data-caption="@Content.Title" href="@youTubeUrl">
+                                @if(Text.Has(Content.Image)) {
+                                <figure>
+                                    <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
+                                        <i class="fab fa-youtube"></i>
+                                    </div>
+                                    @(Tag.Img()
+                                        .Class("img-fluid")
+                                        .Src(Content.Image + "?w=" + 1050 + "&scale=both&mode=max&quality=70")
+                                        .Alt(Content.Title))
+                                </figure>
+                                } else {
+                                    <div class="dnnFormMessage dnnFormWarning">Preview Image not found. Please add Preview Image or turn off Video-Lightbox</div>
+                                }
+                            </a>
                         }
                     }
                 </div>
