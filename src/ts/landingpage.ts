@@ -2,7 +2,7 @@ window.onload = function () {
   initUrlTracking();
   initEventTracking();
 
-  (window as any).doLandingPageTracking('event', 'landing-page', 'visit', '');
+  doLandingPageTracking('event', 'landing-page', 'visit', '');
   const ctaBtn = document.querySelectorAll('.cta');
 
   for(var i = 0; i < ctaBtn.length; i++) {
@@ -18,7 +18,13 @@ window.onload = function () {
       }
     })
   }
+
+  document.addEventListener("trackMobiusForm", function(event) {
+    const details = (event as any).detail;
+    doLandingPageTracking('event', details.category, details.action, details.label);
+  });
 }
+
 
 function initUrlTracking() {
   const queryString = window.location.search;
@@ -29,7 +35,7 @@ function initUrlTracking() {
   const utmCampaign = urlParams.get('utm_campaign');
 
   if(utmSource !== null && utmMedium !== null && utmCampaign !== null) {
-    (window as any).doLandingPageTracking('event', 'landing-page', utmSource, utmCampaign);
+    doLandingPageTracking('event', 'landing-page', utmSource, utmCampaign);
   }
 }
 
@@ -42,15 +48,13 @@ function initEventTracking() {
       const action = _this.dataset.trackingevent;
       const label = _this.textContent;
 
-      (window as any).doLandingPageTracking('event', 'landing-page', action, label);
+      doLandingPageTracking('event', 'landing-page', action, label);
     })
   }
 }
 
-if (!(window as any).doLandingPageTracking) {
-  (window as any).doLandingPageTracking = function(event: string, category: string, action: string, label: string) {
-    if((window as any).ga && ga.create) {
-      ga('gtm1.send', event, category, action, label);
-    }
+function doLandingPageTracking (event: string, category: string, action: string, label: string) {
+  if(ga && ga.create) {
+    ga('gtm1.send', event, category, action, label);
   }
 }
