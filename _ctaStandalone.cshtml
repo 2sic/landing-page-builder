@@ -8,8 +8,7 @@
     <div class="co-container-inner d-flex align-items-center sc-element">
         <div class="co-cta-standalone-wrapper" style="width: 100%">
             <div class="row justify-content-center">            
-                <div class="col-12 col-md-7 text-center mb-4 sc-element">
-                    @Edit.Toolbar(Content)
+                <div class="col-12 col-md-7 text-center mb-4" @Edit.TagToolbar(Content)>
                     @if (Text.Has(Content.Title)) {
                         <h2>@Content.Title</h2>
                     }

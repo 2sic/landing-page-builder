@@ -3,14 +3,13 @@
 @RenderPage("./shared/_Assets.cshtml")
 @{ var parts = CreateInstance("shared/_Parts.cshtml"); }
 
-<section class="co-container-outer position-relative co-intro @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @(Text.Has(Header.Presentation.BGImage) ? "co-backgroundimage" : "") sc-element" @parts.SectionStyle() @Edit.TagToolbar(Header)>
+<section class="co-container-outer position-relative co-intro @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @(Text.Has(Header.Presentation.BGImage) ? "co-backgroundimage" : "")" @parts.SectionStyle() @Edit.TagToolbar(Header)>
     <div class="co-backgroundimage-overlay @Header.Presentation.BGImageEffects"></div>
     <div class="co-container-inner d-flex align-items-center sc-element">
         <div class="co-intro-wrapper">
             @RenderPage("./shared/_Block.cshtml")
             <div class="row justify-content-center">            
-                <div class="col-12 col-md-7 text-center mb-4 sc-element">
-                    @Edit.Toolbar(Content)
+                <div class="col-12 col-md-7 text-center mb-4" @Edit.TagToolbar(Content)>
                     @if (Text.Has(Content.Icon)) {
                         <i class="co-icon fas @Content.Icon" aria-hidden="true"></i>
                     }

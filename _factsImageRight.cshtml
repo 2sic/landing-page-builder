@@ -4,16 +4,15 @@
 @RenderPage("./shared/_Assets.cshtml")
 @{ var parts = CreateInstance("shared/_Parts.cshtml"); }
 
-<section class="co-container-outer position-relative co-fact @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @(Text.Has(Header.Presentation.BGImage) ? "co-backgroundimage" : "") sc-element" @parts.SectionStyle() @Edit.TagToolbar(Header)>
+<section class="co-container-outer position-relative co-fact @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @(Text.Has(Header.Presentation.BGImage) ? "co-backgroundimage" : "")" @parts.SectionStyle() @Edit.TagToolbar(Header)>
     <div class="co-backgroundimage-overlay @Header.Presentation.BGImageEffects"></div>
     <div class="co-container-inner" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
         @RenderPage("./shared/_Block.cshtml")
         
         @{int i = 0;}
         @foreach (var fact in AsList(Data["Default"])) {
-            <div class="row align-items-center mb-5 sc-element">         
+            <div class="row align-items-center mb-5" @Edit.TagToolbar(fact)>         
                 <div class="col-12 col-md-6 mb-4 @((i % 2) != 0 ? "order-md-2" : "text-right")">
-                    @Edit.Toolbar(fact)
                     @if (Text.Has(fact.MicroTitle)) {
                         <h5>@fact.MicroTitle</h5>
                     }

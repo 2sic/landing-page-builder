@@ -3,15 +3,14 @@
 @RenderPage("./shared/_Assets.cshtml")
 @{ var parts = CreateInstance("shared/_Parts.cshtml"); }
 
-<div class="co-container-outer position-relative co-customer-logos @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @(Text.Has(Header.Presentation.BGImage) ? "co-backgroundimage" : "") sc-element" @parts.SectionStyle() @Edit.TagToolbar(Header)>
+<div class="co-container-outer position-relative co-customer-logos @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @(Text.Has(Header.Presentation.BGImage) ? "co-backgroundimage" : "")" @parts.SectionStyle() @Edit.TagToolbar(Header)>
     <div class="co-backgroundimage-overlay @Header.Presentation.BGImageEffects"></div>
     <div class="co-container-inner">
         @RenderPage("./shared/_Block.cshtml")
             <div class="row justify-content-center">   
                 @foreach (var customer in AsList(Data["Default"])) {    
                     <div class="col-6 col-sm-4 col-lg-3 col-xl-2 mb-4">
-                            <div class="h-100 text-center align-items-center sc-element">
-                            @Edit.Toolbar(customer)
+                            <div class="h-100 text-center align-items-center" @Edit.TagToolbar(customer)>
                                 <figure>
                                 @if (Text.Has(customer.Image)) {
                                     <img class="img-fluid" src="@customer.Image?w=400&amp;scale=both&amp;mode=max&amp;quality=70" alt="@customer.Name">
