@@ -133,7 +133,25 @@
       }
     }
 
+    .text-right {
+      .co-text {
+        ol, ul {
+          li {
+            padding: 0 40px 0 0;
+
+            &:before {
+              right: 0px;
+              left: auto;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+
     .co-text {
+      
+
       ul {
         list-style-type: none;
         margin: 0;

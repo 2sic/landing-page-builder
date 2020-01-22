@@ -12,7 +12,7 @@
         @foreach (var fact in AsDynamic(Data["Default"]))
         {
             <div class="row align-items-center mb-5 sc-element">         
-                <div class="col-12 col-md-6 mb-4 @((i % 2) != 0 ? "order-md-2" : "")">
+                <div class="col-12 col-md-6 mb-4 @((i % 2) != 0 ? "order-md-2" : "text-right")">
                     @Edit.Toolbar(fact)
                     @if (!String.IsNullOrEmpty(fact.MicroTitle))
                     {
@@ -21,9 +21,6 @@
                     <h1>@fact.Title</h1>
                     <div class="co-text mb-4">
                         @Html.Raw(fact.Body)
-                    </div>
-                    <div class="co-list mb-5">
-                        @Html.Raw(fact.List)
                     </div>
                 </div>
                 <div class="col-12 col-md-6 mb-4 @(fact.UseInnerContent != null && fact.UseInnerContent ? "sc-content-block-list cta-form" : "")" @Edit.ContextAttributes(fact, field: "InnerContent")>

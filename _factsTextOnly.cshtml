@@ -23,13 +23,6 @@
                     <div class="co-text mb-4">
                         @Html.Raw(fact.Body)
                     </div>
-                    <div class="co-list mb-5 text-left">
-                        <div class="row justify-content-center">
-                            <div class="col-12 col-sm-8 col-md-6">
-                                 @Html.Raw(fact.List)
-                            </div>
-                        </div>
-                    </div>
                     @if(Content.CTA.Count > 0)
                     {
                         foreach (var cta in AsDynamic(Content.CTA)) {
