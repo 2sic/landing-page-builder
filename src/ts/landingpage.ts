@@ -2,7 +2,7 @@ window.onload = function () {
   initUrlTracking();
   initEventTracking();
 
-  doLandingPageTracking('event', 'landing-page', 'visit', '');
+  (window as any).doLandingPageTracking('event', 'landing-page', 'visit', '');
   const ctaBtn = document.querySelectorAll('.cta');
 
   for(var i = 0; i < ctaBtn.length; i++) {
@@ -29,7 +29,7 @@ function initUrlTracking() {
   const utmCampaign = urlParams.get('utm_campaign');
 
   if(utmSource !== null && utmMedium !== null && utmCampaign !== null) {
-    doLandingPageTracking('event', 'landing-page', utmSource, utmCampaign);
+    (window as any).doLandingPageTracking('event', 'landing-page', utmSource, utmCampaign);
   }
 }
 
@@ -42,13 +42,15 @@ function initEventTracking() {
       const action = _this.dataset.trackingevent;
       const label = _this.textContent;
 
-      doLandingPageTracking('event', 'landing-page', action, label);
+      (window as any).doLandingPageTracking('event', 'landing-page', action, label);
     })
   }
 }
 
-function doLandingPageTracking(event: string, category: string, action: string, label: string) {
-  if((window as any).ga && ga.create) {
-    ga('gtm1.send', event, category, action, label);
+if (!(window as any).doLandingPageTracking) {
+  (window as any).doLandingPageTracking = function(event: string, category: string, action: string, label: string) {
+    if((window as any).ga && ga.create) {
+      ga('gtm1.send', event, category, action, label);
+    }
   }
 }
