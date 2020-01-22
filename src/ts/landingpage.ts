@@ -34,5 +34,7 @@ function initEventTracking() {
 }
 
 function doLandingPageTracking(event: string, category: string, action: string, label: string) {
-  ga('gtm1.send', event, category, action, label);
+  if((window as any).ga && ga.create) {
+    ga('gtm1.send', event, category, action, label);
+  }
 }
