@@ -68,10 +68,10 @@
       color: $white;
 
       .co-icon {
-        color: $white;
+        color: $white !important;
       }
 
-      .co-list {
+      .co-text {
         ul {
           li {
             &:before {
@@ -129,11 +129,11 @@
       }
 
       .co-icon {
-        color: $dark;
+        color: $primary;
       }
     }
 
-    .co-list {
+    .co-text {
       ul {
         list-style-type: none;
         margin: 0;
@@ -207,6 +207,26 @@
 
       .co-intro-wrapper {
         width: 100%;
+      }
+    }
+  }
+
+  .co-fact {
+    .text-center {
+      .co-text {
+        ul, ol {
+          position: relative;
+          li {
+            padding-top: 12px;
+            margin: 32px 0;
+
+            &:before {
+              top: 0;
+              left: 50%;
+              transform: translate(0,-50%);
+            }
+          }
+        }
       }
     }
   }
@@ -294,6 +314,11 @@
 
   .co-icon {
     font-size: 128px;
+    color: $primary;
+
+    &.co-icon-center {
+      font-size: 50px;
+    }
   }
   
 }

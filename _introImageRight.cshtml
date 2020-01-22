@@ -18,9 +18,6 @@
                     <div class="co-text mb-5">
                         @Html.Raw(Content.Body)
                     </div>
-                    <div class="co-list mb-5">
-                        @Html.Raw(Content.List)
-                    </div>
                     @if(Content.CTA.Count > 0)
                     {
                         foreach (var cta in AsDynamic(Content.CTA)) {
