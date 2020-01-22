@@ -1,6 +1,7 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
 @RenderPage("./shared/_Assets.cshtml")
+@{ var parts = CreateInstance("shared/_Parts.cshtml"); }
 
 <section class="co-container-outer position-relative co-image-zig-zag @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor sc-element">
     @Edit.Toolbar(Header)
@@ -33,6 +34,7 @@
         i++;
         }
 
-        @RenderPage("./shared/_ButtonList.cshtml")
+        @parts.HeaderCta(Header.CTA)
+        @* @RenderPage("./shared/_ButtonList.cshtml") *@
     </div>
 </section>
