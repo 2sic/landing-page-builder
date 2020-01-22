@@ -10,7 +10,7 @@
             <div class="row align-items-center">
                 <div class="col-12 col-md-6 mb-5 sc-element">
                     @Edit.Toolbar(Content)  
-                    @if (!String.IsNullOrEmpty(@Content.MicroTitle))
+                    @if (!String.IsNullOrEmpty(Content.MicroTitle))
                     {
                         <h5>@Content.MicroTitle</h5>
                     }
@@ -33,7 +33,7 @@
                             @innerContent.Render();
                         }
                     } else {
-                        if (!String.IsNullOrEmpty(@Content.Image))
+                        if (!String.IsNullOrEmpty(Content.Image))
                         {
                             <img class="img-fluid" src="@Content.Image?w=1050&amp;scale=both&amp;mode=max" alt="@Content.Title">
                         }

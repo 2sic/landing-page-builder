@@ -1,3 +1,5 @@
+@using System.Text.RegularExpressions;
+@using ToSic.Razor.Blade;
 @RenderPage("./shared/_Assets.cshtml")
 
 <section class="co-container-outer position-relative co-fact @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor @((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "co-backgroundimage" : "") sc-element" style="@((!String.IsNullOrEmpty(ListContent.Presentation.BGImage)) ? "background-image:url('"+ListContent.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
@@ -12,7 +14,7 @@
             <div class="row align-items-center mb-5 sc-element">         
                 <div class="col-12 col-md-6 mb-4 @((i % 2) != 0 ? "order-md-2" : "")">
                     @Edit.Toolbar(fact)
-                    @if (!String.IsNullOrEmpty(@fact.MicroTitle))
+                    @if (!String.IsNullOrEmpty(fact.MicroTitle))
                     {
                         <h5>@fact.MicroTitle</h5>
                     }
@@ -31,16 +33,41 @@
                             @innerContent.Render();
                         }
                     } else {
-                        if (!String.IsNullOrEmpty(@fact.Image))
+                        if (!String.IsNullOrEmpty(fact.Image) && String.IsNullOrEmpty(fact.VideoUrl))
                         {
                             <img class="img-fluid" src="@fact.Image?w=1050&amp;scale=both&amp;mode=max&amp;quality=70" alt="@fact.Title">
                         }
 
-                        if (String.IsNullOrEmpty(@fact.Image) && !String.IsNullOrEmpty(@fact.Icon))
+                        if (!String.IsNullOrEmpty(fact.Icon) && String.IsNullOrEmpty(fact.Image) && String.IsNullOrEmpty(fact.VideoUrl))
                         {
                             <div class="text-center">
                                 <i class="co-icon fas @fact.Icon" aria-hidden="true"></i>
                             </div>
+                        }
+
+                        if(!String.IsNullOrEmpty(fact.VideoUrl)) {
+                            var youTube = Regex.Match(fact.VideoUrl,
+                                @"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)");
+                            var isYouTube = youTube.Success;
+                            var youTubeUrl = isYouTube
+                                ? "https://www.youtube.com/embed/" + youTube.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent"
+                                : "";
+
+                            <a data-fancybox="fancybox-@Dnn.Module.ModuleID" class="co-video" data-width="1280" data-height="720" data-caption="@fact.Title" href="@youTubeUrl">
+                                @if(Text.Has(fact.Image)) {
+                                <figure>
+                                    <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
+                                        <i class="fab fa-youtube"></i>
+                                    </div>
+                                    @(Tag.Img()
+                                        .Class("img-fluid")
+                                        .Src(fact.Image + "?w=" + 1050 + "&scale=both&mode=max&quality=70")
+                                        .Alt(fact.Title))
+                                </figure>
+                                } else {
+                                    <div class="dnnFormMessage dnnFormWarning">Preview Image not found. Please add Preview Image or turn off Video-Lightbox</div>
+                                }
+                            </a>
                         }
                     }
                 </div>

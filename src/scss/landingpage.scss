@@ -195,6 +195,34 @@
       }
     }
   }
+  
+  figure {
+    position: relative;
+    
+    &:hover {
+      .overlay {
+        background-color: rgba(52,58,64,.4);
+
+        svg {
+          color: red;
+        }
+      }
+    }
+    .overlay {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      background-color: rgba(52,58,64,0);
+      transition: background-color .3s ease-in-out;
+
+      svg {
+        font-size: 72px;
+        color: #fff;
+        transition: color .3s ease-in-out;
+      }
+    }
+  }
 
   // Start Intro
   .co-intro {
