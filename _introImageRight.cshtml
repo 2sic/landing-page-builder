@@ -5,7 +5,6 @@
 @{ var parts = CreateInstance("shared/_Parts.cshtml"); }
 
 <section class="co-container-outer position-relative co-intro @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @(Text.Has(Header.Presentation.BGImage) ? "co-backgroundimage" : "") sc-element" @parts.SectionStyle() @Edit.TagToolbar(Header)>
-@*    @Edit.Toolbar(Header) *@
     <div class="co-backgroundimage-overlay @Header.Presentation.BGImageEffects"></div>
     <div class="co-container-inner d-flex align-items-center sc-element" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
         <div class="co-intro-wrapper">

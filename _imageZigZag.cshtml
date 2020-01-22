@@ -4,7 +4,6 @@
 @{ var parts = CreateInstance("shared/_Parts.cshtml"); }
 
 <section class="co-container-outer position-relative co-image-zig-zag @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor" @Edit.TagToolbar(Header)>
-@*    @Edit.Toolbar(Header) *@
     <div class="co-backgroundimage-overlay @Header.Presentation.BGImageEffects"></div>
     <div class="co-container-inner">
         @RenderPage("./shared/_Block.cshtml")
