@@ -4,6 +4,21 @@ window.onload = function () {
 
   // ga('gtm1.send', 'pageview', location.pathname, 'landingpage');
   doLandingPageTracking('event', 'pageview', location.pathname, 'landingpage');
+  const ctaBtn = document.querySelectorAll('.cta');
+
+  for(var i = 0; i < ctaBtn.length; i++) {
+    ctaBtn[i].addEventListener("click", (e) => {
+      const _this = (e.currentTarget as HTMLElement);
+      const href = _this.getAttribute('href');
+      const ctaForm = document.querySelector('.cta-form');
+
+      if(href == "#cta-form" && ctaForm !== null) {
+        const offY = ctaForm.getBoundingClientRect().top + window.scrollY;
+        
+        window.scrollTo({ top: offY - 100, left: 0, behavior: "smooth" })
+      }
+    })
+  }
 }
 
 function initUrlTracking() {

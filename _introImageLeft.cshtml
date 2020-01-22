@@ -25,7 +25,7 @@
                         }
                     }
                 </div>
-                <div class="col-12 col-md-6 mb-4 @(Content.UseInnerContent != null && Content.UseInnerContent ? "sc-content-block-list" : "")"
+                <div class="col-12 col-md-6 mb-4 @(Content.UseInnerContent != null && Content.UseInnerContent ? "sc-content-block-list cta-form" : "")"
                     @Edit.ContextAttributes(Content, field: "InnerContent")>
                     @if (Content.UseInnerContent != null && Content.UseInnerContent) {
                         foreach (var innerContent in Content.InnerContent)
