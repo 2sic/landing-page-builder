@@ -1,31 +1,28 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
+@using ToSic.Razor.Blade;
 @RenderPage("./shared/_Assets.cshtml")
 
-<section class="co-container-outer position-relative co-fact @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @((!String.IsNullOrEmpty(Header.Presentation.BGImage)) ? "co-backgroundimage" : "") sc-element" style="@((!String.IsNullOrEmpty(Header.Presentation.BGImage)) ? "background-image:url('"+Header.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
+<section class="co-container-outer position-relative co-fact @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @((Text.Has(Header.Presentation.BGImage)) ? "co-backgroundimage" : "") sc-element" style="@((Text.Has(Header.Presentation.BGImage)) ? "background-image:url('"+Header.Presentation.BGImage+"?w=2560&scale=both&quality=70')" : "")">
     @Edit.Toolbar(Header)
     <div class="co-backgroundimage-overlay @Header.Presentation.BGImageEffects"></div>
     <div class="co-container-inner">
         @RenderPage("./shared/_Block.cshtml")
 
-        @foreach (var fact in AsList(Data["Default"]))
-        {    
+        @foreach (var fact in AsList(Data["Default"])) {    
             <div class="row justify-content-center">
                 <div class="col-12 col-md-8 text-center mb-4 sc-element">
                     @Edit.Toolbar(fact)
-                    @if (!String.IsNullOrEmpty(fact.Icon))
-                    {
+                    @if (Text.Has(fact.Icon)) {
                         <i class="co-icon fas co-icon-center @fact.Icon" aria-hidden="true"></i>
                     }
-                    @if (!String.IsNullOrEmpty(fact.MicroTitle))
-                    {
+                    @if (Text.Has(fact.MicroTitle)) {
                         <h5>@fact.MicroTitle</h5>
                     }
                     <h1>@fact.Title</h1>
                     <div class="co-text mb-4">
                         @Html.Raw(fact.Body)
                     </div>
-                    @if(Content.CTA.Count > 0)
-                    {
+                    @if(Content.CTA.Count > 0) {
                         foreach (var cta in AsList(Content.CTA)) {
                             @RenderPage("./shared/_Cta.cshtml", new { cta = cta})
                         }

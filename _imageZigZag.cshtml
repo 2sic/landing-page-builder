@@ -1,4 +1,5 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
+@using ToSic.Razor.Blade;
 @RenderPage("./shared/_Assets.cshtml")
 
 <section class="co-container-outer position-relative co-image-zig-zag @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor sc-element">
@@ -8,15 +9,13 @@
         @RenderPage("./shared/_Block.cshtml")
         
         @{int i = 0;}
-        @foreach (var data in AsList(Data["Default"]))
-        {
+        @foreach (var data in AsList(Data["Default"])) {
         <div class="row no-gutters sc-element">         
             <div class="col-12 col-md-6 col-lg-5 @((i % 2) == 0 ? "order-md-2" : "")">
                 <div class="d-flex align-items-center h-100">
                     <div class="co-zig-zag-content">
                     @Edit.Toolbar(data)
-                    @if (!String.IsNullOrEmpty(data.MicroTitle))
-                    {
+                    @if (Text.Has(data.MicroTitle)) {
                         <h5>@data.MicroTitle</h5>
                     }
                     <h3>@data.Title</h3>
@@ -29,7 +28,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 co-zig-zag-image @((i % 2) != 0 ? "offset-lg-1" : "")" style="@((!String.IsNullOrEmpty(data.Image)) ? "background-image:url('"+data.Image+"?w=2560&scale=both&quality=70')" : "")"></div>
+            <div class="col-12 col-md-6 co-zig-zag-image @((i % 2) != 0 ? "offset-lg-1" : "")" style="@((Text.Has(data.Image)) ? "background-image:url('"+data.Image+"?w=2560&scale=both&quality=70')" : "")"></div>
         </div>
         i++;
         }

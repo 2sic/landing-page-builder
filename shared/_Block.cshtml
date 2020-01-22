@@ -1,19 +1,18 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
-@if (!String.IsNullOrEmpty(Header.Title))
+@using ToSic.Razor.Blade;
+@if (Text.Has(Header.Title))
 {
     <div class="row justify-content-center">
         <div class="col-12 col-md-7 mb-5 text-center sc-element">
-            @if (!String.IsNullOrEmpty(Header.MicroTitle))
-            {
+            @if (Text.Has(Header.MicroTitle)) {
                 <h5>@Header.MicroTitle</h5>
             }
             <h2 class="display-4">@Header.Title</h2>
-            @if (!String.IsNullOrEmpty(Header.Body))
-            {
-            <div class="co-text mb-5">
-                @Html.Raw(Header.Text)
-            </div>
-             }
+            @if (Text.Has(Header.Body)) {
+                <div class="co-text mb-5">
+                    @Html.Raw(Header.Text)
+                </div>
+            }
         </div>
     </div>
 }
