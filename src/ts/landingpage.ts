@@ -2,8 +2,7 @@ window.onload = function () {
   initUrlTracking();
   initEventTracking();
 
-  // ga('gtm1.send', 'pageview', location.pathname, 'landingpage');
-  doLandingPageTracking('event', 'pageview', location.pathname, 'landingpage');
+  doLandingPageTracking('event', 'landingpage', 'visit', '');
   const ctaBtn = document.querySelectorAll('.cta');
 
   for(var i = 0; i < ctaBtn.length; i++) {
@@ -30,7 +29,7 @@ function initUrlTracking() {
   const utmCampaign = urlParams.get('utm_campaign');
 
   if(utmSource !== null && utmMedium !== null && utmCampaign !== null) {
-    doLandingPageTracking('event', utmSource, utmMedium, utmCampaign);
+    doLandingPageTracking('event', 'landingpage', utmSource, utmCampaign);
   }
 }
 
@@ -40,10 +39,10 @@ function initEventTracking() {
   for(var i = 0; i < eventAction.length; i++) {
     eventAction[i].addEventListener("click", (e) => {
       const _this = (e.currentTarget as HTMLElement);
-      const category = _this.dataset.trackingevent;
-      const moduleId = _this.dataset.moduleid;
+      const action = _this.dataset.trackingevent;
+      const label = _this.textContent;
 
-      doLandingPageTracking('event', category, 'click', moduleId);
+      doLandingPageTracking('event', 'landingpage', action, label);
     })
   }
 }
