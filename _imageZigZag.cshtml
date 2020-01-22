@@ -10,7 +10,7 @@
         @foreach (var data in AsDynamic(Data["Default"]))
         {
         <div class="row no-gutters sc-element">         
-            <div class="col-12 col-md-6 @((i % 2) == 0 ? "order-md-2" : "")">
+            <div class="col-12 col-md-6 col-lg-5 @((i % 2) == 0 ? "order-md-2" : "")">
                 <div class="d-flex align-items-center h-100">
                     <div class="co-zig-zag-content">
                     @Edit.Toolbar(data)
@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 co-zig-zag-image" style="@((!String.IsNullOrEmpty(data.Image)) ? "background-image:url('"+data.Image+"?w=2560&scale=both&quality=70')" : "")"></div>
+            <div class="col-12 col-md-6 co-zig-zag-image @((i % 2) != 0 ? "offset-lg-1" : "")" style="@((!String.IsNullOrEmpty(data.Image)) ? "background-image:url('"+data.Image+"?w=2560&scale=both&quality=70')" : "")"></div>
         </div>
         i++;
         }

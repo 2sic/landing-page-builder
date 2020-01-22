@@ -2,7 +2,7 @@ window.onload = function () {
   initUrlTracking();
   initEventTracking();
 
-  doLandingPageTracking('event', 'landingpage', 'visit', '');
+  doLandingPageTracking('event', 'landing-page', 'visit', '');
   const ctaBtn = document.querySelectorAll('.cta');
 
   for(var i = 0; i < ctaBtn.length; i++) {
@@ -29,7 +29,7 @@ function initUrlTracking() {
   const utmCampaign = urlParams.get('utm_campaign');
 
   if(utmSource !== null && utmMedium !== null && utmCampaign !== null) {
-    doLandingPageTracking('event', 'landingpage', utmSource, utmCampaign);
+    doLandingPageTracking('event', 'landing-page', utmSource, utmCampaign);
   }
 }
 
@@ -42,7 +42,7 @@ function initEventTracking() {
       const action = _this.dataset.trackingevent;
       const label = _this.textContent;
 
-      doLandingPageTracking('event', 'landingpage', action, label);
+      doLandingPageTracking('event', 'landing-page', action, label);
     })
   }
 }
