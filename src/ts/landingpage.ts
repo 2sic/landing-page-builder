@@ -3,8 +3,8 @@ window.onload = function () {
   initEventTracking();
 
   doLandingPageTracking('event', 'landing-page', 'visit', '');
+  
   const ctaBtn = document.querySelectorAll('.cta');
-
   for(var i = 0; i < ctaBtn.length; i++) {
     ctaBtn[i].addEventListener("click", (e) => {
       const _this = (e.currentTarget as HTMLElement);

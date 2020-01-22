@@ -1,16 +1,17 @@
-@if (!String.IsNullOrEmpty(ListContent.Title))
+@inherits ToSic.Sxc.Dnn.RazorComponent
+@if (!String.IsNullOrEmpty(Header.Title))
 {
     <div class="row justify-content-center">
         <div class="col-12 col-md-7 mb-5 text-center sc-element">
-            @if (!String.IsNullOrEmpty(ListContent.MicroTitle))
+            @if (!String.IsNullOrEmpty(Header.MicroTitle))
             {
-                <h5>@ListContent.MicroTitle</h5>
+                <h5>@Header.MicroTitle</h5>
             }
-            <h2 class="display-4">@ListContent.Title</h2>
-            @if (!String.IsNullOrEmpty(ListContent.Body))
+            <h2 class="display-4">@Header.Title</h2>
+            @if (!String.IsNullOrEmpty(Header.Body))
             {
             <div class="co-text mb-5">
-                @Html.Raw(ListContent.Text)
+                @Html.Raw(Header.Text)
             </div>
              }
         </div>

@@ -1,13 +1,14 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent
 @RenderPage("./shared/_Assets.cshtml")
 
-<section class="co-container-outer position-relative co-image-zig-zag @ListContent.Presentation.TextOptimization @ListContent.Presentation.BackgroundColor sc-element">
-    @Edit.Toolbar(ListContent)
-    <div class="co-backgroundimage-overlay @ListContent.Presentation.BGImageEffects"></div>
+<section class="co-container-outer position-relative co-image-zig-zag @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor sc-element">
+    @Edit.Toolbar(Header)
+    <div class="co-backgroundimage-overlay @Header.Presentation.BGImageEffects"></div>
     <div class="co-container-inner">
         @RenderPage("./shared/_Block.cshtml")
         
         @{int i = 0;}
-        @foreach (var data in AsDynamic(Data["Default"]))
+        @foreach (var data in AsList(Data["Default"]))
         {
         <div class="row no-gutters sc-element">         
             <div class="col-12 col-md-6 col-lg-5 @((i % 2) == 0 ? "order-md-2" : "")">
