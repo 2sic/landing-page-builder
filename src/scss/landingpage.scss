@@ -2,6 +2,16 @@
 @import "../../../_default/Skins/2sxcBootstrap-B4/node_modules/bootstrap/scss/mixins/_breakpoints.scss";
 
 @media all {
+  ul {
+    &.sc-menu {
+      &.listContent {
+        div {
+          background-color: darkgray;
+        }
+      }
+    }
+  }
+
   .co-container-outer {
     &.co-backgroundimage {
       background-position: center;
