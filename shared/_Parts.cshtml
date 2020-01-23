@@ -28,41 +28,42 @@
   }
 }
 
-@helper VideoImageIconOrInnerContent(dynamic fact) {
-  <div class="col-12 col-md-6 mb-4 @(fact.UseInnerContent != null && fact.UseInnerContent ? "sc-content-block-list cta-form" : "")" @Edit.ContextAttributes(fact, field: "InnerContent")>
-    @if (fact.UseInnerContent != null && fact.UseInnerContent) {
-        foreach (var innerContent in fact.InnerContent) {
+@helper VideoImageIconOrInnerContent(dynamic Data) {
+<div class="col-12 col-md-6 mb-4 @(Data.UseInnerContent != null && Data.UseInnerContent ? "sc-content-block-list cta-form" : "")"
+    @Edit.ContextAttributes(Data, field: "InnerContent")>
+    @if (Data.UseInnerContent != null && Data.UseInnerContent) {
+        foreach (var innerContent in Data.InnerContent) {
             @ToSic.Sxc.Blocks.Render.One(innerContent);
         }
     } else {
-        if (Text.Has(fact.Image) && String.IsNullOrEmpty(fact.VideoUrl)) {
-            <img class="img-fluid" src="@fact.Image?w=1050&amp;scale=both&amp;mode=max&amp;quality=70" alt="@fact.Title">
+        if (Text.Has(Data.Image) && String.IsNullOrEmpty(Data.VideoUrl)) {
+            <img class="img-fluid" src="@Data.Image?w=1050&amp;scale=both&amp;mode=max&amp;quality=70" alt="@Data.Title">
         }
 
-        if (Text.Has(fact.Icon) && String.IsNullOrEmpty(fact.Image) && String.IsNullOrEmpty(fact.VideoUrl)) {
+        if (Text.Has(Data.Icon) && String.IsNullOrEmpty(Data.Image) && String.IsNullOrEmpty(Data.VideoUrl)) {
             <div class="text-center">
-                <i class="co-icon fas @fact.Icon" aria-hidden="true"></i>
+                <i class="co-icon fas @Data.Icon" aria-hidden="true"></i>
             </div>
         }
 
-        if(Text.Has(fact.VideoUrl)) {
-            var youTube = Regex.Match(fact.VideoUrl,
+        if(Text.Has(Data.VideoUrl)) {
+            var youTube = Regex.Match(Data.VideoUrl,
                 @"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)");
             var isYouTube = youTube.Success;
             var youTubeUrl = isYouTube
                 ? "https://www.youtube.com/embed/" + youTube.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent"
                 : "";
 
-            <a data-fancybox="fancybox-@Dnn.Module.ModuleID" class="co-video" data-width="1280" data-height="720" data-caption="@fact.Title" href="@youTubeUrl">
-                @if(Text.Has(fact.Image)) {
+            <a data-fancybox="fancybox-@Dnn.Module.ModuleID" class="co-video" data-width="1280" data-height="720" data-caption="@Data.Title" href="@youTubeUrl">
+                @if(Text.Has(Data.Image)) {
                 <figure>
                     <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
                         <i class="fab fa-youtube"></i>
                     </div>
                     @(Tag.Img()
                         .Class("img-fluid")
-                        .Src(fact.Image + "?w=" + 1050 + "&scale=both&mode=max&quality=70")
-                        .Alt(fact.Title))
+                        .Src(Data.Image + "?w=" + 1050 + "&scale=both&mode=max&quality=70")
+                        .Alt(Data.Title))
                 </figure>
                 } else {
                     <div class="dnnFormMessage dnnFormWarning">Preview Image not found. Please add Preview Image or turn off Video-Lightbox</div>
@@ -71,50 +72,4 @@
         }
     }
 </div>
-}
-
-@helper ProbablyDuplicateVideoImageIconOrInnerContent(dynamic Content) {
-  <div class="col-12 col-md-6 mb-4 @(Content.UseInnerContent != null && Content.UseInnerContent ? "sc-content-block-list cta-form" : "")"
-    @Edit.ContextAttributes(Content, field: "InnerContent")>
-    @if (Content.UseInnerContent != null && Content.UseInnerContent) {
-        foreach (var innerContent in Content.InnerContent) {
-            @ToSic.Sxc.Blocks.Render.One(innerContent);
-        }
-    } else {
-        if (Text.Has(Content.Image) && String.IsNullOrEmpty(Content.VideoUrl)) {
-            <img class="img-fluid" src="@Content.Image?w=1050&amp;scale=both&amp;mode=max&amp;quality=70" alt="@Content.Title">
-        }
-
-        if (Text.Has(Content.Icon) && String.IsNullOrEmpty(Content.Image) && String.IsNullOrEmpty(Content.VideoUrl)) {
-            <div class="text-center">
-                <i class="co-icon fas @Content.Icon" aria-hidden="true"></i>
-            </div>
-        }
-
-        if(Text.Has(Content.VideoUrl)) {
-            var youTube = Regex.Match(Content.VideoUrl,
-                @"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)");
-            var isYouTube = youTube.Success;
-            var youTubeUrl = isYouTube
-                ? "https://www.youtube.com/embed/" + youTube.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent"
-                : "";
-
-            <a data-fancybox="fancybox-@Dnn.Module.ModuleID" class="co-video" data-width="1280" data-height="720" data-caption="@Content.Title" href="@youTubeUrl">
-                @if(Text.Has(Content.Image)) {
-                <figure>
-                    <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
-                        <i class="fab fa-youtube"></i>
-                    </div>
-                    @(Tag.Img()
-                        .Class("img-fluid")
-                        .Src(Content.Image + "?w=" + 1050 + "&scale=both&mode=max&quality=70")
-                        .Alt(Content.Title))
-                </figure>
-                } else {
-                    <div class="dnnFormMessage dnnFormWarning">Preview Image not found. Please add Preview Image or turn off Video-Lightbox</div>
-                }
-            </a>
-        }
-    }
-</div> 
 }
