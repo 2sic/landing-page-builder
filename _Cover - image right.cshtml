@@ -9,7 +9,7 @@
     >
     @parts.BackgroundDiv()
     <div class="co-container-inner d-flex align-items-center sc-element">
-        <div class="co-intro-wrapper">
+        <div class="co-intro-wrapper" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
 
             @RenderPage("./shared/_Block.cshtml")
             <div class="row align-items-center">

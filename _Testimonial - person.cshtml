@@ -8,7 +8,7 @@
     @Edit.TagToolbar(Header, settings: new { hover = "left" })
     >
     @parts.BackgroundDiv()
-    <div class="co-container-inner">
+    <div class="co-container-inner" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
         @RenderPage("./shared/_Block.cshtml")
         <div class="row mb-5 co-card justify-content-center">   
             @foreach (var customer in AsList(Data)) {    

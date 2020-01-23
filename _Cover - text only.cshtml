@@ -9,7 +9,7 @@
     >
     @parts.BackgroundDiv()
     <div class="co-container-inner d-flex align-items-center">
-        <div class="co-intro-wrapper">
+        <div class="co-intro-wrapper" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
             @RenderPage("./shared/_Block.cshtml")
             <div class="row justify-content-center">            
                 <div class="col-12 col-md-7 text-center mb-4" @Edit.TagToolbar(Content)>
