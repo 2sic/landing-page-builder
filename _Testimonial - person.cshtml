@@ -3,7 +3,7 @@
 @RenderPage("./shared/_Assets.cshtml")
 @{ var parts = CreateInstance("shared/_Parts.cshtml"); }
 
-<div class="co-container-outer position-relative co-customer-faces @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @(Text.Has(Header.Presentation.BGImage) ? "co-backgroundimage" : "")" @parts.SectionStyle() @Edit.TagToolbar(Header)>
+<section class="co-container-outer position-relative co-customer-faces @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @(Text.Has(Header.Presentation.BGImage) ? "co-backgroundimage" : "")" @parts.SectionStyle() @Edit.TagToolbar(Header, settings: new { hover = "left" })>
     @parts.BackgroundDiv()
     <div class="co-container-inner">
         @RenderPage("./shared/_Block.cshtml")
@@ -33,4 +33,4 @@
 
         @parts.HeaderCta(Header.CTA)
     </div>
-</div>
+</section>

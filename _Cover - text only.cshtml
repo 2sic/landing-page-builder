@@ -3,9 +3,9 @@
 @RenderPage("./shared/_Assets.cshtml")
 @{ var parts = CreateInstance("shared/_Parts.cshtml"); }
 
-<section class="co-container-outer position-relative co-intro @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @(Text.Has(Header.Presentation.BGImage) ? "co-backgroundimage" : "")" @parts.SectionStyle() @Edit.TagToolbar(Header)>
+<section class="co-container-outer position-relative co-intro @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @(Text.Has(Header.Presentation.BGImage) ? "co-backgroundimage" : "")" @parts.SectionStyle() @Edit.TagToolbar(Header, settings: new { hover = "left" })>
     @parts.BackgroundDiv()
-    <div class="co-container-inner d-flex align-items-center sc-element">
+    <div class="co-container-inner d-flex align-items-center">
         <div class="co-intro-wrapper">
             @RenderPage("./shared/_Block.cshtml")
             <div class="row justify-content-center">            
@@ -21,11 +21,6 @@
                         @Html.Raw(Content.Body)
                     </div>
                     @parts.CtaList(Content.CTA)
-                    @* @if(Content.CTA.Count > 0) {
-                        foreach (var cta in AsList(Content.CTA)) {
-                            @RenderPage("./shared/_Cta.cshtml", new { cta = cta})
-                        }
-                    } *@
                 </div>
             </div>
             @parts.HeaderCta(Header.CTA)

@@ -3,7 +3,7 @@
 @RenderPage("./shared/_Assets.cshtml")
 @{ var parts = CreateInstance("shared/_Parts.cshtml"); }
 
-<div class="co-container-outer position-relative co-customer-logos @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @(Text.Has(Header.Presentation.BGImage) ? "co-backgroundimage" : "")" @parts.SectionStyle() @Edit.TagToolbar(Header)>
+<section class="co-container-outer position-relative co-customer-logos @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @(Text.Has(Header.Presentation.BGImage) ? "co-backgroundimage" : "")" @parts.SectionStyle() @Edit.TagToolbar(Header, settings: new { hover = "left" })>
     @parts.BackgroundDiv()
     <div class="co-container-inner">
         @RenderPage("./shared/_Block.cshtml")
@@ -16,17 +16,10 @@
                             <img class="img-fluid" src="@customer.Image?w=400&amp;scale=both&amp;mode=max&amp;quality=70" alt="@customer.Name">
                         }
                         </figure>
-                        @*<div class="card-body sc-element">
-                        
-                            <h6 class="card-title">@customer.Name</h6>
-                            <div class="card-text">
-                                @Html.Raw(customer.Body)
-                            </div>
-                        </div>*@
                     </div>
                 </div>     
             }
         </div>
         @parts.HeaderCta(Header.CTA)
     </div>
-</div>
+</section>
