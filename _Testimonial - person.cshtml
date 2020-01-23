@@ -7,7 +7,6 @@
     @parts.BackgroundDiv()
     <div class="co-container-inner">
         @RenderPage("./shared/_Block.cshtml")
-        
         <div class="row mb-5 co-card justify-content-center">   
             @foreach (var customer in AsList(Data)) {    
                 <div class="col-12 col-sm-6 col-lg-4 mb-5" @Edit.TagToolbar(customer)>
@@ -20,7 +19,6 @@
                               }
                             </figure>
                             <div class="card-body">
-                               
                                 <h6 class="card-title">@customer.Name</h6>
                                 <div class="card-text">
                                     @Html.Raw(customer.Body)

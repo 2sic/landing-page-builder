@@ -22,12 +22,6 @@
                         @Html.Raw(fact.Body)
                     </div>
                     @parts.CtaList(Content.CTA)
-
-                    @* @if(Content.CTA.Count > 0) {
-                        foreach (var cta in AsList(Content.CTA)) {
-                            @RenderPage("./shared/_Cta.cshtml", new { cta = cta})
-                        }
-                    } *@
                 </div>
             </div>
         }
