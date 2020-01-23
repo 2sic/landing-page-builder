@@ -1,5 +1,0 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent
-@{
-  dynamic cta = PageData["cta"];
-}
-<a href="@cta.Link" class="btn btn-primary cta" data-id="@cta.EntityId" data-moduleid="@Dnn.Module.ModuleID" data-trackingevent="cta">@cta.Label</a>

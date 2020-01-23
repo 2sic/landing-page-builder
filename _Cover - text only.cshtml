@@ -3,7 +3,10 @@
 @RenderPage("./shared/_Assets.cshtml")
 @{ var parts = CreateInstance("shared/_Parts.cshtml"); }
 
-<section class="co-container-outer position-relative co-intro @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @(Text.Has(Header.Presentation.BGImage) ? "co-backgroundimage" : "")" @parts.SectionStyle() @Edit.TagToolbar(Header, settings: new { hover = "left" })>
+<section class='co-container-outer @parts.SectionClasses("co-intro")'
+    @parts.SectionStyle()
+    @Edit.TagToolbar(Header, settings: new { hover = "left" })
+    >
     @parts.BackgroundDiv()
     <div class="co-container-inner d-flex align-items-center">
         <div class="co-intro-wrapper">
