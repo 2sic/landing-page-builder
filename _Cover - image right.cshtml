@@ -12,8 +12,8 @@
         <div class="co-intro-wrapper" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
 
             @RenderPage("./shared/_Block.cshtml")
-            <div class="row align-items-center">
-                <div class="col-12 col-md-6 mb-5" @Edit.TagToolbar(Content)>
+            <div class="row align-items-center" @Edit.TagToolbar(Content)>
+                <div class="col-12 col-md-6 mb-5">
                     @if (Text.Has(Content.MicroTitle)) {
                         <h5>@Content.MicroTitle</h5>
                     }
