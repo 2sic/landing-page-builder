@@ -24,7 +24,7 @@
     }
 
     &.co-bg-bright {
-      background-color: $light;
+      background-color: $gray-300;
     }
 
     &.co-bg-dark {
@@ -33,11 +33,15 @@
 
     &.co-bg-primary {
       background-color: $primary;
+    }
+
+    &.co-bg-primary {
+      background-color: $primary;
       
       a {
         &.btn-primary {
           background-color: $white;
-          border-color: $light;
+          border-color: $gray-300;
           color: $primary!important;
           &:hover {
             background-color: $gray-200;
@@ -65,7 +69,7 @@
       height: 100%;
 
       &.co-bg-effect-brighter {
-        background-color: $light;
+        background-color: $gray-300;
         opacity: .7;
       }
 
@@ -354,6 +358,17 @@
           position: relative;
         }
       }
+    }
+  }
+
+  .co-cta-standalone {
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 300;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 2.75rem;
+      } 
     }
   }
 
