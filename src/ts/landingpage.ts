@@ -59,7 +59,7 @@
   }
 
   function doLandingPageTracking (category: string, action: string, label: string) {
-    if(ga && ga.create) {
+    if((window as any).ga && ga.create) {
       ga('gtm1.send', 'event', category, action, label);
     }
   }
