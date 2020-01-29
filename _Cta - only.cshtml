@@ -11,7 +11,7 @@
     <div class="co-container-inner d-flex align-items-center" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
         <div class="co-cta-standalone-wrapper" style="width: 100%">
             <div class="row justify-content-center">            
-                <div class="col-12 col-md-7 text-center mb-4" @Edit.TagToolbar(Content)>
+                <div class="col-12 col-md-8 text-center mb-4" @Edit.TagToolbar(Content)>
                     @if (Text.Has(Content.Title)) {
                         <h1>@Content.Title</h1>
                     }

@@ -12,7 +12,7 @@
         <div class="co-intro-wrapper" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
             @RenderPage("./shared/_Block.cshtml")
             <div class="row justify-content-center mt-5">            
-                <div class="col-12 col-md-7 text-center mb-4" @Edit.TagToolbar(Content)>
+                <div class="col-12 col-md-8 text-center mb-4" @Edit.TagToolbar(Content)>
                     @if (Text.Has(Content.Icon)) {
                         <i class="co-icon fas @Content.Icon" aria-hidden="true"></i>
                     }
