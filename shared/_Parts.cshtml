@@ -17,7 +17,7 @@
 @helper CtaList(dynamic ctas) {
     if(ctas.Count != 0) { 
         foreach (var cta in AsList(ctas)) {
-            <a href="@cta.Link" class="btn btn-primary cta" data-id="@cta.EntityId" data-moduleid="@Dnn.Module.ModuleID" data-trackingevent="cta">@cta.Label</a>
+            <a href="@cta.Link" class="btn btn-primary btn-lg cta" data-id="@cta.EntityId" data-moduleid="@Dnn.Module.ModuleID" data-trackingevent="cta">@cta.Label</a>
         }
     }
 }
