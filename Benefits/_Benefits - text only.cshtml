@@ -1,7 +1,7 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
-@RenderPage("./shared/_Assets.cshtml")
-@{ var parts = CreateInstance("shared/_Parts.cshtml"); }
+@RenderPage("../shared/_Assets.cshtml")
+@{ var parts = CreateInstance("../shared/_Parts.cshtml"); }
 
 <section class='co-container-outer @parts.SectionClasses("co-fact")'
     @parts.SectionStyle()
@@ -9,7 +9,7 @@
     >
     @parts.BackgroundDiv()
     <div class="co-container-inner" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
-        @RenderPage("./shared/_Block.cshtml")
+        @RenderPage("../shared/_Block.cshtml")
 
         @foreach (var fact in AsList(Data)) {    
             <div class="row justify-content-center">

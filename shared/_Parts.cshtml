@@ -15,7 +15,7 @@
 }
 
 @helper CtaList(dynamic ctas) {
-    if(ctas.Count != 0) { 
+    if(ctas.Count != 0) {  
         foreach (var cta in AsList(ctas)) {
             <a href="@cta.Link" class="btn btn-primary btn-lg cta" data-id="@cta.EntityId" data-moduleid="@Dnn.Module.ModuleID" data-trackingevent="cta">@cta.Label</a>
         }
@@ -40,11 +40,11 @@
                 @ToSic.Sxc.Blocks.Render.One(innerContent);
             }
         } else {
-            if (Text.Has(Data.Image) && String.IsNullOrEmpty(Data.VideoUrl)) {
+            if (Text.Has(Data.Image) && !Text.Has(Data.VideoUrl)) {
                 <img class="img-fluid" src="@Data.Image?w=1050&amp;scale=both&amp;mode=max&amp;quality=70" alt="@Data.Title">
             }
 
-            if (Text.Has(Data.Icon) && String.IsNullOrEmpty(Data.Image) && String.IsNullOrEmpty(Data.VideoUrl)) {
+            if (Text.Has(Data.Icon) && !Text.Has(Data.Image) && !Text.Has(Data.VideoUrl)) {
                 <div class="text-center">
                     <i class="co-icon fas @Data.Icon" aria-hidden="true"></i>
                 </div>
