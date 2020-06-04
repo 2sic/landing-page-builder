@@ -296,14 +296,7 @@
   }
 
   // Start Zig Zag
-  .co-image-zig-zag {
-    &.sc-element {
-      .sc-menu {
-        right: auto !important;
-        left: 5px !important;
-      }
-    }
-    
+  .co-image-zig-zag {    
     .co-container-inner {
       max-width: 100%;
       padding: 0;
