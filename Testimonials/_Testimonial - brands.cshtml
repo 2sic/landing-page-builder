@@ -16,7 +16,7 @@
                     <div class="h-100 text-center align-items-center" @Edit.TagToolbar(customer)>
                         <figure>
                         @if (Text.Has(customer.Image)) {
-                            <img class="img-fluid" src="@customer.Image?w=400&amp;scale=both&amp;mode=max&amp;quality=70" alt="@customer.Name">
+                            <img class="img-fluid" src='@Tags.SafeUrl(customer.Image + "?w=400&amp;scale=both&amp;mode=max&amp;quality=70")' alt="@customer.Name">
                         }
                         </figure>
                     </div>

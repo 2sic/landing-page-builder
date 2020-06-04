@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 co-zig-zag-image" style="@((Text.Has(data.Image)) ? "background-image:url('"+data.Image+"?w=2560&scale=both&quality=70')" : "")"></div>
+            <div class="col-12 col-md-6 co-zig-zag-image" style="@((Text.Has(data.Image)) ? "background-image:url('"+Tags.SafeUrl(data.Image)+"?w=2560&scale=both&quality=70')" : "")"></div>
         </div>
         i++;
         }

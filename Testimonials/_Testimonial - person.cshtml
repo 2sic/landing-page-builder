@@ -16,7 +16,8 @@
                         <div class="card h-100 text-center">
                             <figure>
                               @if (Text.Has(customer.Image)) {
-                                <img class="card-img-top rounded-circle" src="@customer.Image?w=400&amp;h=400&amp;scale=both&amp;mode=crop&amp;quality=70" alt="@customer.Name">
+                                  
+                                <img class="card-img-top rounded-circle" src='@Tags.SafeUrl(customer.Image + "?w=400&amp;h=400&amp;scale=both&amp;mode=crop&amp;quality=70")' alt="@customer.Name">
                               } else {
                                 <div class="co-person-placeholder"></div>
                               }
