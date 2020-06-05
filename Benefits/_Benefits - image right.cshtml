@@ -1,6 +1,5 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
-@RenderPage("../shared/_Assets.cshtml")
 @{ var parts = CreateInstance("../shared/_Helpers.cshtml"); }
 
 <section class='co-container-outer @parts.SectionClasses("co-fact")'
@@ -31,3 +30,5 @@
         @parts.HeaderCta(Header.CTA)
     </div>
 </section>
+
+@RenderPage("../shared/_Assets.cshtml")

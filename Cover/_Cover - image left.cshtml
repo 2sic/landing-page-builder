@@ -1,11 +1,10 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
-@RenderPage("../shared/_Assets.cshtml")
 @{ var parts = CreateInstance("../shared/_Helpers.cshtml"); }
 
 <section class='co-container-outer @parts.SectionClasses("co-intro")'
     @parts.SectionStyle()
-    @Edit.TagToolbar(Header, toolbar: new [] { "settings&hover=left&autoAddMore=start" })
+    @Edit.TagToolbar(Header, toolbar: new [] { "settings&hover=left&autoAddMore=start&class=coverTagbar" })
     >
     @parts.BackgroundDiv()
     <div class="co-container-inner d-flex align-items-center">
@@ -29,4 +28,5 @@
         </div>
     </div>
 </section>
-        
+
+@RenderPage("../shared/_Assets.cshtml")

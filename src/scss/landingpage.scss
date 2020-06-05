@@ -2,6 +2,17 @@
 @import "../../../_default/Skins/Bootstrap 4 Instant/node_modules/bootstrap/scss/mixins/_breakpoints.scss";
 
 @media all {
+  .sc-menu {
+    &.coverTagbar {
+      margin-top: 35px !important;
+    }
+  }
+
+  .sc-content-block-quick-insert,
+  .sc-content-block-selected-menu {
+    margin-top: 0px !important;
+  }
+
   ul {
     &.sc-menu {
       &.listContent {
