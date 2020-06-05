@@ -6,7 +6,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const WebpackBar = require('webpackbar');
 
 module.exports = {
-  entry: ['./src/scss/landingpage.scss', './src/ts/landingpage.ts'],
+  entry: ['./src/styles/landingpage.scss', './src/ts/landingpage.ts'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'landingpage.min.js',
