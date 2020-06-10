@@ -1,12 +1,12 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
-@{ var parts = CreateInstance("../shared/_Helpers.cshtml"); }
+@{ var helpers = CreateInstance("../shared/_Helpers.cshtml"); }
 
-<section class='co-container-outer @parts.SectionClasses("co-cta-standalone")'
-    @parts.SectionStyle()
-    @Edit.TagToolbar(Header, toolbar: new [] { "settings&hover=left&autoAddMore=start" })
+<section class='app-landingpage-builder co-cta-standalone @helpers.SectionClasses()'
+    @helpers.SectionStyle()
+    @Edit.TagToolbar(Header, toolbar: "settings&hover=left&autoAddMore=start")
     >
-    @parts.BackgroundDiv()
+    @helpers.BackgroundDiv()
     <div class="co-container-inner d-flex align-items-center" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
         <div class="co-cta-standalone-wrapper" style="width: 100%">
             <div class="row justify-content-center">            
@@ -19,7 +19,7 @@
                             @Html.Raw(Content.Body)
                         </div>
                     }
-                    @parts.CtaList(Content.CTA)
+                    @helpers.CtaList(Content.CTA)
                 </div>
             </div>
         </div>

@@ -1,36 +1,36 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
-@{ var parts = CreateInstance("../shared/_Helpers.cshtml"); }
+@{ var helpers = CreateInstance("../shared/_Helpers.cshtml"); }
 
-<section class='co-container-outer @parts.SectionClasses("co-fact")'
-    @parts.SectionStyle()
-    @Edit.TagToolbar(Header, toolbar: new [] { "settings&hover=left&autoAddMore=start" })
+<section class='app-landingpage-builder co-fact @helpers.SectionClasses()'
+    @helpers.SectionStyle()
+    @Edit.TagToolbar(Header, toolbar: "settings&hover=left&autoAddMore=start")
     >
-    @parts.BackgroundDiv()
+    @helpers.BackgroundDiv()
     <div class="co-container-inner" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
         @RenderPage("../shared/_Block.cshtml")
 
-        @foreach (var fact in AsList(Data)) {    
+        @foreach (var data in AsList(Data)) {    
             <div class="row justify-content-center">
-                <div class="col-12 col-md-8 text-center mb-4" @Edit.TagToolbar(fact)>
-                    @if (Text.Has(fact.Icon)) {
-                        <i class="co-icon fas co-icon-center @fact.Icon" aria-hidden="true"></i>
+                <div class="col-12 col-md-8 text-center mb-4" @Edit.TagToolbar(data)>
+                    @if (Text.Has(data.Icon)) {
+                        <i class="co-icon fas co-icon-center @data.Icon" aria-hidden="true"></i>
                     }
-                    @if (Text.Has(fact.MicroTitle)) {
-                        <h5>@fact.MicroTitle</h5>
+                    @if (Text.Has(data.MicroTitle)) {
+                        <h5>@data.MicroTitle</h5>
                     }
-                    <h1>@fact.Title</h1>
+                    <h3>@data.Title</h3>
                     <div class="co-text mb-4">
-                        @Html.Raw(fact.Body)
+                        @Html.Raw(data.Body)
                     </div>
-                    @parts.CtaList(Content.CTA)
+                    @helpers.CtaList(data.CTA)
                 </div>
             </div>
             <div class="row justify-content-center">            
-                @parts.VideoImageIconOrInnerContent(Content)
+                @helpers.VideoImageIconOrInnerContent(data)
             </div>
         }
-        @parts.HeaderCta(Header.CTA)
+        @helpers.HeaderCta(Header.CTA)
     </div>
 </section>
 

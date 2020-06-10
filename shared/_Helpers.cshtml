@@ -3,11 +3,11 @@
 @using ToSic.Razor.Blade;
 
 @helper SectionStyle() {
-<text>style="@(Text.Has(Header.Presentation.BGImage) ? "background-image:url('"+Tags.SafeUrl(Header.Presentation.BGImage)+"?w=2560&scale=both&quality=70')" : "")"</text>
+@Tag.Attr("style", (Text.Has(Header.Presentation.BGImage) ? "background-image:url('"+Tags.SafeUrl(Header.Presentation.BGImage)+"?w=2560&scale=both&quality=70')" : ""))
 }
 
-@helper SectionClasses(string sectionClass) {
-<text>@sectionClass @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @(Text.Has(Header.Presentation.BGImage) ? "co-backgroundimage" : "")</text>
+@helper SectionClasses() {
+<text>@Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @(Text.Has(Header.Presentation.BGImage) ? "co-backgroundimage" : "")</text>
 }
 
 @helper BackgroundDiv() {
@@ -40,16 +40,6 @@
                 @ToSic.Sxc.Blocks.Render.One(innerContent);
             }
         } else {
-            if (Text.Has(Data.Image) && !Text.Has(Data.VideoUrl)) {
-                <img class="img-fluid" src='@Tags.SafeUrl(Data.Image + "?w=1050&amp;scale=both&amp;mode=max&amp;quality=70")' alt="@Data.Title">
-            }
-
-            if (Text.Has(Data.Icon) && !Text.Has(Data.Image) && !Text.Has(Data.VideoUrl)) {
-                <div class="text-center">
-                    <i class="co-icon fas @Data.Icon" aria-hidden="true"></i>
-                </div>
-            }
-
             if(Text.Has(Data.VideoUrl)) {
                 var youTube = Regex.Match(Data.VideoUrl,
                     @"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)");
@@ -64,16 +54,23 @@
                         <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
                             <i class="fab fa-youtube"></i>
                         </div>
-                        @(Tag.Img()
-                            .Class("img-fluid")
-                            .Src(Tags.SafeUrl(Data.Image) + "?w=" + 1050 + "&scale=both&mode=max&quality=70")
-                            .Alt(Data.Title))
+                        <img class="img-fluid" src='@Tags.SafeUrl(Data.Image + "?w=1050&amp;scale=both&amp;mode=max&amp;quality=70")' alt="@Data.Title">
                     </figure>
                     } else {
                         <div class="dnnFormMessage dnnFormWarning">Preview Image not found. Please add Preview Image or turn off Video-Lightbox</div>
                     }
                 </a>
+            } 
+            else if (Text.Has(Data.Image)) {
+                <img class="img-fluid" src='@Tags.SafeUrl(Data.Image + "?w=1050&amp;scale=both&amp;mode=max&amp;quality=70")' alt="@Data.Title">
+            } 
+            else if (Text.Has(Data.Icon) ) {
+                <div class="text-center">
+                    <i class="co-icon fas @Data.Icon" aria-hidden="true"></i>
+                </div>
             }
+
+
         }
     </div>
 }

@@ -1,33 +1,36 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
-@{ var parts = CreateInstance("../shared/_Helpers.cshtml"); }
+@{ 
+  var helpers = CreateInstance("../shared/_Helpers.cshtml");
+  var i = 0;
+  var rowEven = "order-md-2";
+  var rowOdd = "text-right";
+}
 
-<section class='co-container-outer @parts.SectionClasses("co-fact")'
-    @parts.SectionStyle()
-    @Edit.TagToolbar(Header, toolbar: new [] { "settings&hover=left&autoAddMore=start" })
+<section class='app-landingpage-builder co-fact @helpers.SectionClasses()'
+    @helpers.SectionStyle()
+    @Edit.TagToolbar(Header, toolbar: "settings&hover=left&autoAddMore=start")
     >
-    @parts.BackgroundDiv()
+    @helpers.BackgroundDiv()
     <div class="co-container-inner" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
         @RenderPage("../shared/_Block.cshtml")
         
-        @{int i = 0;}
-        @foreach (var fact in AsList(Data)) {
-            <div class="row align-items-center mb-5" @Edit.TagToolbar(fact)>         
-                <div class="col-12 col-md-6 mb-4 @((i % 2) == 0 ? "order-md-2" : "text-right")">
-                    @if (Text.Has(fact.MicroTitle)) {
-                        <h5>@fact.MicroTitle</h5>
+        @foreach (var data in AsList(Data)) {
+            <div class="row align-items-center mb-5" @Edit.TagToolbar(data)>         
+                <div class="col-12 col-md-6 mb-4 @(i++ % 2 == 0 ? rowEven : rowOdd)">
+                    @if (Text.Has(data.MicroTitle)) {
+                        <h5>@data.MicroTitle</h5>
                     }
-                    <h3>@fact.Title</h3>
+                    <h3>@data.Title</h3>
                     <div class="co-text mb-4">
-                        @Html.Raw(fact.Body)
+                        @Html.Raw(data.Body)
                     </div>
                 </div>
-                @parts.VideoImageIconOrInnerContent(fact)
+                @helpers.VideoImageIconOrInnerContent(data)
             </div>
-            i++;
         }
 
-        @parts.HeaderCta(Header.CTA)
+        @helpers.HeaderCta(Header.CTA)
     </div>
 </section>
 

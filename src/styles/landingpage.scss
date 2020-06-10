@@ -27,7 +27,7 @@
     position: relative;
   }
 
-  .co-container-outer {
+  .app-landingpage-builder {
     &.co-backgroundimage {
       background-position: center;
       background-repeat: no-repeat;
@@ -60,6 +60,7 @@
         }
       }
     }
+    
     a {
       &.btn {
         box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.3);
