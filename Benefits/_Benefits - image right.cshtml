@@ -2,6 +2,7 @@
 @using ToSic.Razor.Blade;
 @{ 
   var helpers = CreateInstance("../shared/_Helpers.cshtml");
+  var benefitsHelpers = CreateInstance("_Helpers - Benefits.cshtml");
   var i = 0;
   var rowEven = "order-md-2";
   var rowOdd = "text-right";
@@ -18,13 +19,7 @@
         @foreach (var data in AsList(Data)) {
             <div class="row align-items-center mb-5" @Edit.TagToolbar(data, toolbar: "settings&hover=left&autoAddMore=start")>         
                 <div class="col-12 col-md-6 mb-4 @(i++ % 2 != 0 ? rowEven : rowOdd)">
-                    @if (Text.Has(data.MicroTitle)) {
-                        <h5>@data.MicroTitle</h5>
-                    }
-                    <h3>@data.Title</h3>
-                    <div class="content-body mb-4">
-                        @Html.Raw(data.Body)
-                    </div>
+                    @benefitsHelpers.Body(data)
                 </div>
                 @helpers.VideoImageIconOrInnerContent(data)
             </div>

@@ -1,10 +1,13 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
-@{ var helpers = CreateInstance("../shared/_Helpers.cshtml"); }
+@{ 
+    var helpers = CreateInstance("../shared/_Helpers.cshtml");
+    var coverHelpers = CreateInstance("_Helpers - Cover.cshtml");
+}
 
 <section class='app-landingpage-builder app-lp-cover @helpers.SectionClasses()'
     @helpers.SectionStyle()
-    @Edit.TagToolbar(Header, toolbar: new [] { "settings&hover=left&autoAddMore=start&class=coverTagbar" })
+    @Edit.TagToolbar(Header, toolbar: "settings&hover=left&autoAddMore=start&class=coverTagbar")
     >
     @helpers.BackgroundDiv()
     <div class="container-fluid d-flex align-items-center">
@@ -14,13 +17,7 @@
                 @if (Text.Has(Content.Icon)) {
                     <i class="content-icon fas @Content.Icon" aria-hidden="true"></i>
                 }
-                @if (Text.Has(Content.MicroTitle)) {
-                    <h5>@Content.MicroTitle</h5>
-                }
-                <h1 class="display-4">@Content.Title</h1>
-                <div class="content-body mb-5">
-                    @Html.Raw(Content.Body)
-                </div>
+                @coverHelpers.Body()
                 @helpers.CtaList(Content.CTA)
             </div>
         </div>

@@ -1,6 +1,9 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
-@{ var helpers = CreateInstance("../shared/_Helpers.cshtml"); }
+@{ 
+    var helpers = CreateInstance("../shared/_Helpers.cshtml"); 
+    var benefitsHelpers = CreateInstance("_Helpers - Benefits.cshtml");
+}
 
 <section class='app-landingpage-builder app-lp-benefits @helpers.SectionClasses()'
     @helpers.SectionStyle()
@@ -16,13 +19,7 @@
                     @if (Text.Has(data.Icon)) {
                         <i class="content-icon fas content-icon-center @data.Icon" aria-hidden="true"></i>
                     }
-                    @if (Text.Has(data.MicroTitle)) {
-                        <h5>@data.MicroTitle</h5>
-                    }
-                    <h3>@data.Title</h3>
-                    <div class="content-body mb-4">
-                        @Html.Raw(data.Body)
-                    </div>
+                    @benefitsHelpers.Body(data)
                     @helpers.CtaList(data.CTA)
                 </div>
             </div>
