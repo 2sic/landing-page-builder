@@ -12,13 +12,13 @@
         <div class="row justify-content-center mt-5">            
             <div class="col-12 col-md-8 text-center mb-4" @Edit.TagToolbar(Content) @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
                 @if (Text.Has(Content.Icon)) {
-                    <i class="co-icon fas @Content.Icon" aria-hidden="true"></i>
+                    <i class="content-icon fas @Content.Icon" aria-hidden="true"></i>
                 }
                 @if (Text.Has(Content.MicroTitle)) {
                     <h5>@Content.MicroTitle</h5>
                 }
                 <h1 class="display-4">@Content.Title</h1>
-                <div class="co-text mb-5">
+                <div class="content-body mb-5">
                     @Html.Raw(Content.Body)
                 </div>
                 @helpers.CtaList(Content.CTA)

@@ -7,7 +7,7 @@
   var rowOdd = "offset-xl-1";
 }
 
-<section class="app-landingpage-builder co-image-zig-zag @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor"
+<section class="app-landingpage-builder app-lp-image-zig-zag @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor"
     @Edit.TagToolbar(Header, toolbar: "settings&hover=left&autoAddMore=start")
     >
     @helpers.BackgroundDiv()
@@ -15,25 +15,22 @@
         @RenderPage("../shared/_Block.cshtml")
         
         @foreach (var data in AsList(Data)) {
-        <div class="row no-gutters" @Edit.TagToolbar(data)>         
-            <div class="col-12 col-md-6 col-xl-5 @(i++ % 2 == 0 ? rowEven : rowOdd)">
-                <div class="d-flex align-items-center h-100">
-                    <div class="co-zig-zag-content">
-                        @if (Text.Has(data.MicroTitle)) {
-                            <h5>@data.MicroTitle</h5>
-                        }
-                        <h3>@data.Title</h3>
-                        <div class="co-text mb-4">
-                            @Html.Raw(data.Body)
-                        </div>
-                        <div class="co-list">
-                            @Html.Raw(data.List)
+            <div class="row no-gutters" @Edit.TagToolbar(data)>         
+                <div class="col-12 col-md-6 col-xl-5 @(i++ % 2 == 0 ? rowEven : rowOdd)">
+                    <div class="d-flex align-items-center h-100">
+                        <div class="zig-zag-content">
+                            @if (Text.Has(data.MicroTitle)) {
+                                <h5>@data.MicroTitle</h5>
+                            }
+                            <h3>@data.Title</h3>
+                            <div class="content-body mb-4">
+                                @Html.Raw(data.Body)
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-12 col-md-6 co-zig-zag-image" style="@((Text.Has(data.Image)) ? "background-image:url('"+Tags.SafeUrl(data.Image)+"?w=2560&scale=both&quality=70')" : "")"></div>
             </div>
-            <div class="col-12 col-md-6 co-zig-zag-image" style="@((Text.Has(data.Image)) ? "background-image:url('"+Tags.SafeUrl(data.Image)+"?w=2560&scale=both&quality=70')" : "")"></div>
-        </div>
         }
 
         @helpers.HeaderCta(Header.CTA)

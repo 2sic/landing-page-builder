@@ -14,13 +14,13 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-md-8 text-center mb-4" @Edit.TagToolbar(data)>
                     @if (Text.Has(data.Icon)) {
-                        <i class="co-icon fas co-icon-center @data.Icon" aria-hidden="true"></i>
+                        <i class="content-icon fas content-icon-center @data.Icon" aria-hidden="true"></i>
                     }
                     @if (Text.Has(data.MicroTitle)) {
                         <h5>@data.MicroTitle</h5>
                     }
                     <h3>@data.Title</h3>
-                    <div class="co-text mb-4">
+                    <div class="content-body mb-4">
                         @Html.Raw(data.Body)
                     </div>
                     @helpers.CtaList(data.CTA)
