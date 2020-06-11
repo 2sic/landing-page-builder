@@ -28,7 +28,7 @@
   }
 
   .app-landingpage-builder {
-    &.co-backgroundimage {
+    &.section-backgroundimage {
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -40,10 +40,6 @@
 
     &.co-bg-dark {
       background-color: $dark;
-    }
-
-    &.co-bg-primary {
-      background-color: $primary;
     }
 
     &.co-bg-primary {
@@ -72,7 +68,7 @@
       }
     }
 
-    .co-backgroundimage-overlay {
+    .section-backgroundimage-overlay {
       position: absolute;
       top: 0;
       bottom: 0;
