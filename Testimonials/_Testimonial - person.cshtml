@@ -7,19 +7,17 @@
     @Edit.TagToolbar(Header, toolbar: "settings&hover=left&autoAddMore=start")
     >
     @helpers.BackgroundDiv()
-    <div class="container-fluid" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
+    <div class="container-fluid">
         @RenderPage("../shared/_Block.cshtml")
-        <div class="row mb-5 co-card justify-content-center">   
+        <div class="row mb-5 justify-content-center">   
             @foreach (var customer in AsList(Data)) {    
                 <div class="col-12 col-sm-6 col-lg-4 mb-5" @Edit.TagToolbar(customer, toolbar: new[] { "%delete&show=true" })>
                         <div class="card h-100 text-center">
                             <figure>
-                              @if (Text.Has(customer.Image)) {
-                                  
-                                <img class="card-img-top rounded-circle" src='@Tags.SafeUrl(customer.Image + "?w=400&amp;h=400&amp;scale=both&amp;mode=crop&amp;quality=70")' alt="@customer.Name">
-                              } else {
-                                <div class="co-person-placeholder"></div>
-                              }
+                                @{
+                                    var personImage = Text.Has(customer.Image) ? customer.Image : App.Path + "/src/images/person-placeholder.jpg";
+                                }
+                                <img class="card-img-top rounded-circle" src='@Tags.SafeUrl(personImage + "?w=400&amp;h=400&amp;scale=both&amp;mode=crop&amp;quality=70")' alt="@customer.Name">
                             </figure>
                             <div class="card-body">
                                 <h6 class="card-title">@customer.Name</h6>

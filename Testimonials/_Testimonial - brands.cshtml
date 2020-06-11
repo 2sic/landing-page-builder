@@ -7,7 +7,7 @@
     @Edit.TagToolbar(Header, toolbar: "settings&hover=left&autoAddMore=start")
     >
     @helpers.BackgroundDiv()
-    <div class="container-fluid" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
+    <div class="container-fluid">
         @RenderPage("../shared/_Block.cshtml")
         <div class="row justify-content-center">   
             @foreach (var customer in AsList(Data)) {    

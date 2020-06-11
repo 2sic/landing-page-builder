@@ -7,9 +7,9 @@
     @Edit.TagToolbar(Header, toolbar: "settings&hover=left&autoAddMore=start")
     >
     @helpers.BackgroundDiv()
-    <div class="container-fluid" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
+    <div class="container-fluid d-flex align-items-center">
         <div class="row justify-content-center align-items-center">            
-            <div class="col-12 col-md-8 text-center mb-4" @Edit.TagToolbar(Content)>
+            <div class="col-12 col-md-8 text-center mb-4" @Edit.TagToolbar(Content) @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
                 @if (Text.Has(Content.Title)) {
                     <h1>@Content.Title</h1>
                 }

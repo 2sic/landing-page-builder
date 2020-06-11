@@ -7,9 +7,9 @@
     @Edit.TagToolbar(Header, toolbar: new [] { "settings&hover=left&autoAddMore=start&class=coverTagbar" })
     >
     @helpers.BackgroundDiv()
-    <div class="container-fluid">
+    <div class="container-fluid d-flex align-items-center">
         @RenderPage("../shared/_Block.cshtml")
-        <div class="row align-items-center mt-5" @Edit.TagToolbar(Content) @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
+        <div class="row align-items-center w-100 mt-5" @Edit.TagToolbar(Content) @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
             <div class="col-12 col-md-6 mb-5 order-md-2">
                 @if (Text.Has(Content.MicroTitle)) {
                     <h5>@Content.MicroTitle</h5>

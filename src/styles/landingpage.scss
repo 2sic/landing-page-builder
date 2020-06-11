@@ -303,7 +303,7 @@
       max-width: 100%;
       padding: 0;
 
-      .co-zig-zag-image {
+      .zig-zag-image {
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -326,32 +326,29 @@
 
   // Start Customer Faces
   .app-lp-testimonials-faces {
-    .co-card {
-      color: $dark;
+    .card {
+      background-color: transparent;
+      border: 0px;
 
-      .card {
-        background-color: transparent;
-        border: 0px;
-
-        .card-body {
-          box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.2);
-          background-color: $white;
-          padding-top: $grid-gutter-width*3;
-          border-radius: .25rem;
-        }
+      .card-body {
+        color: $dark;
+        box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.2);
+        background-color: $white;
+        padding-top: $grid-gutter-width*3;
+        border-radius: .25rem;
       }
+    }
 
-      figure {
-        text-align: center;
-        margin: 0;
+    figure {
+      text-align: center;
+      margin: 0;
 
-        img {
-          margin: 0 auto;
-          max-width: 120px;
-          box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.2);
-          margin-bottom: -60px;
-          position: relative;
-        }
+      img {
+        margin: 0 auto;
+        max-width: 120px;
+        box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.2);
+        margin-bottom: -60px;
+        position: relative;
       }
     }
   }
