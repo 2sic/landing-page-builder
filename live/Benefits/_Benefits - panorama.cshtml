@@ -6,9 +6,10 @@
   var i = 0;
   var rowEven = "order-md-2";
   var rowOdd = "offset-xl-1";
+  var presentation = Header.Presentation;
 }
 
-<section class="app-landingpage-builder app-lp-image-zig-zag @Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor"
+<section class="app-landingpage-builder app-lp-image-zig-zag section-text-@presentation.TextOptimization section-bg-color-@presentation.BackgroundColor"
     @Edit.TagToolbar(Header, toolbar: "settings&hover=left&autoAddMore=start")
     >
     @helpers.BackgroundDiv()

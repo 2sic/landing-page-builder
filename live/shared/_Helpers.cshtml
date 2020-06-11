@@ -3,15 +3,18 @@
 @using ToSic.Razor.Blade;
 
 @helper SectionStyle() {
-@Tag.Attr("style", (Text.Has(Header.Presentation.BGImage) ? "background-image:url('"+Tags.SafeUrl(Header.Presentation.BGImage)+"?w=2560&scale=both&quality=70')" : ""))
+var presentation = Header.Presentation;
+@Tag.Attr("style", (Text.Has(presentation.BGImage) ? "background-image:url('"+Tags.SafeUrl(presentation.BGImage)+"?w=2560&scale=both&quality=70')" : ""))
 }
 
 @helper SectionClasses() {
-<text>@Header.Presentation.TextOptimization @Header.Presentation.BackgroundColor @(Text.Has(Header.Presentation.BGImage) ? "section-backgroundimage" : "")</text>
+var presentation = Header.Presentation;
+<text>section-text-@presentation.TextOptimization section-bg-color-@presentation.BackgroundColor @(Text.Has(presentation.BGImage) ? "section-bg-img" : "")</text>
 }
 
 @helper BackgroundDiv() {
-    <div class="section-backgroundimage-overlay @Header.Presentation.BGImageEffects"></div>
+var presentation = Header.Presentation;
+<div class="section-bg-img-overlay section-bg-effect-@presentation.BGImageEffects"></div>
 }
 
 @helper CtaList(dynamic ctas) {

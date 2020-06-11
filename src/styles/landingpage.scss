@@ -28,21 +28,21 @@
   }
 
   .app-landingpage-builder {
-    &.section-backgroundimage {
+    &.section-bg-img {
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
     }
 
-    &.co-bg-bright {
+    &.section-bg-color-bright {
       background-color: $gray-300;
     }
 
-    &.co-bg-dark {
+    &.section-bg-color-dark {
       background-color: $dark;
     }
 
-    &.co-bg-primary {
+    &.section-bg-color-primary {
       background-color: $primary;
       
       a {
@@ -68,7 +68,7 @@
       }
     }
 
-    .section-backgroundimage-overlay {
+    .section-bg-img-overlay {
       position: absolute;
       top: 0;
       bottom: 0;
@@ -76,18 +76,18 @@
       width: 100%;
       height: 100%;
 
-      &.co-bg-effect-brighter {
+      &.section-bg-effect-brighter {
         background-color: $gray-300;
         opacity: .7;
       }
 
-      &.co-bg-effect-darker {
+      &.section-bg-effect-darker {
         background-color: $dark;
         opacity: .7;
       }
     }
 
-    &.co-text-brighter {
+    &.section-text-brighter {
       h1,h2,h3,h4,h5 {
         color:$white;
       }
@@ -117,7 +117,7 @@
       }
     }
 
-    &.co-text-darker {
+    &.section-text-darker {
       h1,h2,h3,h4,h5 {
         color: $dark;
       }
