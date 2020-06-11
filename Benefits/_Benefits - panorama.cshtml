@@ -11,7 +11,7 @@
     @Edit.TagToolbar(Header, toolbar: "settings&hover=left&autoAddMore=start")
     >
     @helpers.BackgroundDiv()
-    <div class="co-container-inner" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
+    <div class="container-fluid" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
         @RenderPage("../shared/_Block.cshtml")
         
         @foreach (var data in AsList(Data)) {

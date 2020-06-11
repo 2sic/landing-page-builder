@@ -2,31 +2,29 @@
 @using ToSic.Razor.Blade;
 @{ var helpers = CreateInstance("../shared/_Helpers.cshtml"); }
 
-<section class='app-landingpage-builder co-intro @helpers.SectionClasses()'
+<section class='app-landingpage-builder app-lp-cover @helpers.SectionClasses()'
     @helpers.SectionStyle()
     @Edit.TagToolbar(Header, toolbar: new [] { "settings&hover=left&autoAddMore=start&class=coverTagbar" })
     >
     @helpers.BackgroundDiv()
-    <div class="co-container-inner d-flex align-items-center">
-        <div class="co-intro-wrapper" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
-            @RenderPage("../shared/_Block.cshtml")
-            <div class="row justify-content-center mt-5">            
-                <div class="col-12 col-md-8 text-center mb-4" @Edit.TagToolbar(Content)>
-                    @if (Text.Has(Content.Icon)) {
-                        <i class="co-icon fas @Content.Icon" aria-hidden="true"></i>
-                    }
-                    @if (Text.Has(Content.MicroTitle)) {
-                        <h5>@Content.MicroTitle</h5>
-                    }
-                    <h1 class="display-4">@Content.Title</h1>
-                    <div class="co-text mb-5">
-                        @Html.Raw(Content.Body)
-                    </div>
-                    @helpers.CtaList(Content.CTA)
+    <div class="container-fluid">
+        @RenderPage("../shared/_Block.cshtml")
+        <div class="row justify-content-center mt-5">            
+            <div class="col-12 col-md-8 text-center mb-4" @Edit.TagToolbar(Content) @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
+                @if (Text.Has(Content.Icon)) {
+                    <i class="co-icon fas @Content.Icon" aria-hidden="true"></i>
+                }
+                @if (Text.Has(Content.MicroTitle)) {
+                    <h5>@Content.MicroTitle</h5>
+                }
+                <h1 class="display-4">@Content.Title</h1>
+                <div class="co-text mb-5">
+                    @Html.Raw(Content.Body)
                 </div>
+                @helpers.CtaList(Content.CTA)
             </div>
-            @helpers.HeaderCta(Header.CTA)
         </div>
+        @helpers.HeaderCta(Header.CTA)
     </div>
 </section>
 
