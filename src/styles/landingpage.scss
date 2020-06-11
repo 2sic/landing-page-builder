@@ -234,7 +234,7 @@
     }
   }
   
-  figure {
+  .content-video {
     position: relative;
     
     &:hover {
@@ -326,25 +326,20 @@
       background-color: transparent;
       border: 0px;
 
-      .card-body {
-        color: $dark;
-        box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.2);
-        background-color: $white;
-        padding-top: $grid-gutter-width*3;
-        border-radius: .25rem;
-      }
-    }
-
-    figure {
-      text-align: center;
-      margin: 0;
-
       img {
         margin: 0 auto;
         max-width: 120px;
         box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.2);
         margin-bottom: -60px;
         position: relative;
+      }
+
+      .card-body {
+        color: $dark;
+        box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.2);
+        background-color: $white;
+        padding-top: $grid-gutter-width*3;
+        border-radius: .25rem;
       }
     }
   }
@@ -361,16 +356,12 @@
   }
 
   // Start Customer Faces
-  .app-lp-testimonials-logos {
-    figure {
-      text-align: center;
+  .app-lp-testimonials-brands {
+    img {        
+      margin: 0 auto;
 
-      img {        
-        margin: 0 auto;
-
-        @include media-breakpoint-up(md) {
-          max-width: 160px;
-        }
+      @include media-breakpoint-up(md) {
+        max-width: 160px;
       }
     }
   }

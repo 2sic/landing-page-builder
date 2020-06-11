@@ -50,12 +50,12 @@
 
                 <a data-fancybox="fancybox-@Dnn.Module.ModuleID" data-width="1280" data-height="720" data-caption="@Data.Title" href="@youTubeUrl">
                     @if(Text.Has(Data.Image)) {
-                    <figure>
+                    <div class="content-video">
                         <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
                             <i class="fab fa-youtube"></i>
                         </div>
                         <img class="img-fluid" src='@Tags.SafeUrl(Data.Image + "?w=1050&amp;scale=both&amp;mode=max&amp;quality=70")' alt="@Data.Title">
-                    </figure>
+                    </div>
                     } else {
                         <div class="dnnFormMessage dnnFormWarning">Preview Image not found. Please add Preview Image or turn off Video-Lightbox</div>
                     }
@@ -69,8 +69,6 @@
                     <i class="content-icon fas @Data.Icon" aria-hidden="true"></i>
                 </div>
             }
-
-
         }
     </div>
 }

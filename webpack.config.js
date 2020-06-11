@@ -8,7 +8,7 @@ const WebpackBar = require('webpackbar');
 module.exports = {
   entry: ['./src/styles/landingpage.scss', './src/scripts/landingpage.ts'],
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'live/dist'),
     filename: 'landingpage.min.js',
   },
   mode: 'production',

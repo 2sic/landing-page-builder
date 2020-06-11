@@ -13,12 +13,10 @@
             @foreach (var customer in AsList(Data)) {    
                 <div class="col-12 col-sm-6 col-lg-4 mb-5" @Edit.TagToolbar(customer, toolbar: new[] { "%delete&show=true" })>
                         <div class="card h-100 text-center">
-                            <figure>
-                                @{
-                                    var personImage = Text.Has(customer.Image) ? customer.Image : App.Path + "/src/images/person-placeholder.jpg";
-                                }
-                                <img class="card-img-top rounded-circle" src='@Tags.SafeUrl(personImage + "?w=400&amp;h=400&amp;scale=both&amp;mode=crop&amp;quality=70")' alt="@customer.Name">
-                            </figure>
+                            @{
+                                var personImage = Text.Has(customer.Image) ? customer.Image : App.Path + "/src/images/person-placeholder.jpg";
+                            }
+                            <img class="card-img-top rounded-circle" src='@Tags.SafeUrl(personImage + "?w=400&amp;h=400&amp;scale=both&amp;mode=crop&amp;quality=70")' alt="@customer.Name">
                             <div class="card-body">
                                 <h6 class="card-title">@customer.Name</h6>
                                 <div class="card-text">

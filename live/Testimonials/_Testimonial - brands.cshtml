@@ -2,7 +2,7 @@
 @using ToSic.Razor.Blade;
 @{ var helpers = CreateInstance("../shared/_Helpers.cshtml"); }
 
-<section class='app-landingpage-builder app-lp-testimonials-logos @helpers.SectionClasses()'
+<section class='app-landingpage-builder app-lp-testimonials-brands @helpers.SectionClasses()'
     @helpers.SectionStyle()
     @Edit.TagToolbar(Header, toolbar: "settings&hover=left&autoAddMore=start")
     >
@@ -13,11 +13,9 @@
             @foreach (var customer in AsList(Data)) {    
                 <div class="col-6 col-sm-4 col-lg-3 col-xl-2 mb-4">
                     <div class="h-100 text-center align-items-center" @Edit.TagToolbar(customer, toolbar: new[] { "%delete&show=true" })>
-                        <figure>
                         @if (Text.Has(customer.Image)) {
                             <img class="img-fluid" src='@Tags.SafeUrl(customer.Image + "?w=400&amp;scale=both&amp;mode=max&amp;quality=70")' alt="@customer.Name">
                         }
-                        </figure>
                     </div>
                 </div>     
             }
