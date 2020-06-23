@@ -1,12 +1,12 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
-@{ var helpers = CreateInstance("../shared/_Helpers.cshtml"); }
+@{ var parts = CreateInstance("../shared/_Parts.cshtml"); }
 
-<section class='app-landingpage-builder app-lp-cta-standalone @helpers.SectionClasses()'
-    @helpers.SectionStyle()
+<section class='app-landingpage-builder app-lp-cta-standalone @parts.SectionClasses()'
+    @parts.SectionStyle()
     @Edit.TagToolbar(Header, toolbar: "settings&hover=left&autoAddMore=start")
     >
-    @helpers.BackgroundDiv()
+    @parts.BackgroundDiv()
     <div class="container-fluid d-flex align-items-center">
         <div class="row justify-content-center align-items-center">            
             <div class="col-12 col-md-8 text-center mb-4" @Edit.TagToolbar(Content) @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
@@ -18,7 +18,7 @@
                         @Html.Raw(Content.Body)
                     </div>
                 }
-                @helpers.CtaList(Content.CTA)
+                @parts.CtaList(Content.CTA)
             </div>
         </div>
     </div>

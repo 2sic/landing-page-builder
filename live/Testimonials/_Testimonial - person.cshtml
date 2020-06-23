@@ -1,17 +1,17 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
-@{ var helpers = CreateInstance("../shared/_Helpers.cshtml"); }
+@{ var parts = CreateInstance("../shared/_Parts.cshtml"); }
 
-<section class='app-landingpage-builder app-lp-testimonials-faces @helpers.SectionClasses()'
-    @helpers.SectionStyle()
+<section class='app-landingpage-builder app-lp-testimonials-faces @parts.SectionClasses()'
+    @parts.SectionStyle()
     @Edit.TagToolbar(Header, toolbar: "settings&hover=left&autoAddMore=start")
     >
-    @helpers.BackgroundDiv()
+    @parts.BackgroundDiv()
     <div class="container-fluid">
         @RenderPage("../shared/_Block.cshtml")
         <div class="row mb-5 justify-content-center">   
             @foreach (var customer in AsList(Data)) {    
-                <div class="col-12 col-sm-6 col-lg-4 mb-5" @Edit.TagToolbar(customer, toolbar: new[] { "%delete&show=true" })>
+                <div class="col-12 col-sm-6 col-lg-4 mb-5" @Edit.TagToolbar(customer, toolbar: "%delete&show=true")>
                         <div class="card h-100 text-center">
                             @{
                                 var personImage = Text.Has(customer.Image) ? customer.Image : App.Path + "/src/images/person-placeholder.jpg";
@@ -28,7 +28,7 @@
             }
         </div>
 
-        @helpers.HeaderCta(Header.CTA)
+        @parts.HeaderCta(Header.CTA)
     </div>
 </section>
 

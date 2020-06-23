@@ -1,31 +1,31 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
 @{ 
-  var helpers = CreateInstance("../shared/_Helpers.cshtml");
-  var benefitsHelpers = CreateInstance("_Helpers - Benefits.cshtml");
+  var parts = CreateInstance("../shared/_Parts.cshtml");
+  var benefitsParts = CreateInstance("_Parts - Benefits.cshtml");
   var i = 0;
   var rowEven = "order-md-2";
   var rowOdd = "text-right";
 }
 
-<section class='app-landingpage-builder app-lp-benefits @helpers.SectionClasses()'
-    @helpers.SectionStyle()
+<section class='app-landingpage-builder app-lp-benefits @parts.SectionClasses()'
+    @parts.SectionStyle()
     @Edit.TagToolbar(Header, toolbar: "settings&hover=left&autoAddMore=start")
     >
-    @helpers.BackgroundDiv()
+    @parts.BackgroundDiv()
     <div class="container-fluid" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
         @RenderPage("../shared/_Block.cshtml")
         
         @foreach (var data in AsList(Data)) {
             <div class="row align-items-center mb-5" @Edit.TagToolbar(data, toolbar: "settings&hover=left&autoAddMore=start")>         
                 <div class="col-12 col-md-6 mb-4 @(i++ % 2 != 0 ? rowEven : rowOdd)">
-                    @benefitsHelpers.Body(data)
+                    @benefitsParts.Body(data)
                 </div>
-                @helpers.VideoImageIconOrInnerContent(data)
+                @parts.VideoImageIconOrInnerContent(data)
             </div>
         }
 
-        @helpers.HeaderCta(Header.CTA)
+        @parts.HeaderCta(Header.CTA)
     </div>
 </section>
 

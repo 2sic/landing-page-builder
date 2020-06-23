@@ -1,25 +1,25 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
 @{ 
-    var helpers = CreateInstance("../shared/_Helpers.cshtml");
-    var coverHelpers = CreateInstance("_Helpers - Cover.cshtml");
+    var parts = CreateInstance("../shared/_Parts.cshtml");
+    var coverParts = CreateInstance("_Parts - Cover.cshtml");
 }
 
-<section class='app-landingpage-builder app-lp-cover @helpers.SectionClasses()'
-    @helpers.SectionStyle()
+<section class='app-landingpage-builder app-lp-cover @parts.SectionClasses()'
+    @parts.SectionStyle()
     @Edit.TagToolbar(Header, toolbar: "settings&hover=left&autoAddMore=start&class=coverTagbar")
     >
-    @helpers.BackgroundDiv()
+    @parts.BackgroundDiv()
     <div class="container-fluid d-flex align-items-center">
         @RenderPage("../shared/_Block.cshtml")
         <div class="row align-items-center w-100 mt-5" @Edit.TagToolbar(Content) @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
             <div class="col-12 col-md-6 mb-5 order-md-2">
-                @coverHelpers.Body()
-                @helpers.CtaList(Content.CTA)
+                @coverParts.Body()
+                @parts.CtaList(Content.CTA)
             </div>
-            @helpers.VideoImageIconOrInnerContent(Content)
+            @parts.VideoImageIconOrInnerContent(Content)
         </div>
-        @helpers.HeaderCta(Header.CTA)
+        @parts.HeaderCta(Header.CTA)
     </div>
 </section>
 
