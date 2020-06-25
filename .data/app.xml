@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="11.02.01" ExportDate="2020-06-11T13:31:32.6589797+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="11.02.01" ExportDate="2020-06-25T11:47:42.1136241+02:00">
   <Header>
     <App Guid="74ee6dd3-1a24-492a-aa6d-46f90d6e6ef3" />
     <Language Default="en-US" />
@@ -1499,7 +1499,7 @@
       <Value Key="SupportsAjaxReload" Value="True" Type="Boolean">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="03.00.00" Type="String">
+      <Value Key="Version" Value="02.00.00" Type="String">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
     </Entity>
@@ -2223,29 +2223,6 @@
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
     </Entity>
-    <Entity AssignmentObjectType="Default" AttributeSetStaticName="1cadc38c-c0b6-44fb-b2b4-75652cb27d50" AttributeSetName="Content" EntityGUID="d9f155d8-7ccd-48af-9b16-fc8f4f500501">
-      <Value Key="Body" Value="&lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Fitness&lt;/li&gt;&#xA;&lt;li&gt;Relaxation&lt;/li&gt;&#xA;&lt;li&gt;Nuitrition&lt;/li&gt;&#xA;&lt;/ol&gt;" Type="String">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="Icon" Value="" Type="String">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="Image" Value="file:4331" Type="Hyperlink">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="MicroTitle" Value="MEDICAL FITENSS" Type="String">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="Title" Value="Get fit in 3 steps" Type="String">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="UseInnerContent" Value="False" Type="Boolean">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="VideoUrl" Value="" Type="Hyperlink">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-    </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="7ff0bd02-ec32-44ab-8a33-02aec3440686" AttributeSetName="BlockPresentation" EntityGUID="bee75c0f-8d6d-48a6-9444-e79c041e2fdb">
       <Value Key="BackgroundColor" Value="dark" Type="String">
         <Dimension DimensionID="118" ReadOnly="false" />
@@ -2647,60 +2624,12 @@
       <Value Key="Template" Value="7d3a9033-983e-4825-8091-1599cf6e36d0" Type="String" />
       <Value Key="Title" Value="2ro Test" Type="String" />
     </Entity>
-    <Entity AssignmentObjectType="Default" AttributeSetStaticName="1cadc38c-c0b6-44fb-b2b4-75652cb27d50" AttributeSetName="Content" EntityGUID="e98b8f5c-828e-4fdb-b39a-d887333c6cc5">
-      <Value Key="Body" Value="&lt;p&gt;This is a neat intro - for form use...&lt;/p&gt;" Type="String">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="Icon" Value="" Type="String">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="Image" Value="" Type="Hyperlink">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="InnerContent" Value="d6a72a62-49cd-4044-bbb4-032a53a757db" Type="Entity" />
-      <Value Key="MicroTitle" Value="Demo Intro with Form" Type="String">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="Title" Value="Demo Form Intro" Type="String">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="UseInnerContent" Value="True" Type="Boolean">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="VideoUrl" Value="" Type="Hyperlink">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-    </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="ContentGroupReference" AttributeSetName="ContentGroupReference" EntityGUID="d6a72a62-49cd-4044-bbb4-032a53a757db" Json="True">
       <Value Key="App" Value="74c59dba-8e66-463a-b6fc-752b98c71a57" Type="String" />
       <Value Key="ContentGroup" Value="a6e7c7c6-528c-4ce0-b6dc-7baca8d869b7" Type="String" />
       <Value Key="ShowTemplateChooser" Value="True" Type="Boolean" />
       <Value Key="Template" Value="7d3a9033-983e-4825-8091-1599cf6e36d0" Type="String" />
       <Value Key="Title" Value="" Type="String" />
-    </Entity>
-    <Entity AssignmentObjectType="Default" AttributeSetStaticName="1cadc38c-c0b6-44fb-b2b4-75652cb27d50" AttributeSetName="Content" EntityGUID="a5ef4b73-e806-4c92-aa2b-ff7cf7ead9fe">
-      <Value Key="Body" Value="" Type="String">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="CTA" Value="4ec6ded6-a622-44aa-a886-e88ed75c2061" Type="Entity" />
-      <Value Key="Icon" Value="" Type="String">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="Image" Value="file:4324" Type="Hyperlink">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="MicroTitle" Value="" Type="String">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="Title" Value="Test Video" Type="String">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="UseInnerContent" Value="False" Type="Boolean">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="VideoUrl" Value="https://www.youtube.com/watch?v=RQgarsil1Bo" Type="Hyperlink">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="cf27fcad-01aa-4464-8ac9-61028ea58fab" AttributeSetName="Block" EntityGUID="23974398-5c65-4a8b-9230-26db1d631a88">
       <Value Key="Body" Value="" Type="String">
@@ -2710,29 +2639,6 @@
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
       <Value Key="Title" Value="" Type="String">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-    </Entity>
-    <Entity AssignmentObjectType="Default" AttributeSetStaticName="1cadc38c-c0b6-44fb-b2b4-75652cb27d50" AttributeSetName="Content" EntityGUID="0727d909-e6f5-4deb-82e5-a4f929ed270c">
-      <Value Key="Body" Value="&lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.&lt;/p&gt;" Type="String">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="Icon" Value="fa-address-book" Type="String">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="Image" Value="" Type="Hyperlink">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="MicroTitle" Value="" Type="String">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="Title" Value="ICON TEST" Type="String">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="UseInnerContent" Value="False" Type="Boolean">
-        <Dimension DimensionID="118" ReadOnly="false" />
-      </Value>
-      <Value Key="VideoUrl" Value="" Type="Hyperlink">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
     </Entity>
