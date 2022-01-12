@@ -1,0 +1,40 @@
+@inherits Custom.Hybrid.Razor12
+@using ToSic.Razor.Blade;
+@using ToSic.Sxc.Services;
+@{
+  // 1. Get Services for Css and Page
+  var pageCss = GetService<Connect.Koi.ICss>();         // Service to get CSS information about the current Theme
+  // Activate font-Awesome 5 from the global resources and activate https://r.2sxc.org/turnon
+  var page = GetService<IPageService>();  // Service to set titles etc. on the page
+  page.Activate("FontAwesome5", "fancybox4", "turnOn");
+
+  // 2. Include Bootstrap4 if the framework isn't known
+  if (pageCss.IsUnknown) {
+    page.Activate("Bootstrap4");
+  }
+
+  // Init options for fancybox binding
+  // This is only partial - if you want to see more, see https://fancyapps.com/docs/ui/fancybox/options
+  var fancyboxOptions = new {
+    groupAll = true,
+    mainClass = "app-ga7-fancybox", 
+    Thumbs = new {
+      autoStart = false
+    }
+  };
+}
+
+@* 3. If we need scripts (only on the single-album-view) activate these. Note that DynamicModel contains the parameters *@
+@if (DynamicModel.fancybox == true) {
+  <turnOn turn-on='{
+    "await": ["window.Fancybox"], 
+    "run": "window.appLandingPageBuilder3.init()", 
+    "data": { 
+      "fancyboxAttribute": "@DynamicModel.FancyboxAttribute", 
+      "fancyboxOptions": @Html.Raw(Convert.Json.ToJson(fancyboxOptions)) 
+    }}'
+  ></turnOn>
+}
+<link rel="stylesheet" href="@App.Path/bs4/dist/styles.min.css" data-enableoptimizations="false"/>
+<script type="text/javascript" src="@App.Path/bs4/dist/scripts.min.js" data-enableoptimizations="true"></script>
+

@@ -6,6 +6,6 @@
         "lib": ["es6", "dom"],
         "target": "es3",
         "allowJs": true,
-        "types" : ["jquery","google.analytics"]
+        "types" : ["google.analytics"]
     }
 }

@@ -1,0 +1,10 @@
+@inherits Custom.Hybrid.Razor12
+@using ToSic.Razor.Blade;
+
+@if (Text.Has(DynamicModel.Data.MicroTitle)) {
+  <h5>@DynamicModel.Data.MicroTitle</h5>
+}
+<h3>@DynamicModel.Data.Title</h3>
+<div class="content-body mb-4">
+    @Html.Raw(DynamicModel.Data.Body)
+</div>

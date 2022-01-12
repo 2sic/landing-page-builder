@@ -1,0 +1,50 @@
+@using ToSic.Razor.Blade
+@using System.Text.RegularExpressions;
+@using ToSic.Sxc.Services;
+@inherits Custom.Hybrid.Razor12
+@{
+  var render = GetService<IRenderService>();
+  var hasInnerContent = DynamicModel.Data.UseInnerContent != null && DynamicModel.Data.UseInnerContent;
+}
+<div class='col-12 col-md-6 mb-4 @(hasInnerContent ? "sc-content-block-list cta-form" : "")'
+  @Edit.ContextAttributes(DynamicModel.Data, field: "InnerContent")>
+  @if (hasInnerContent) { 
+    foreach (var innerContent in DynamicModel.Data.InnerContent) {  @render.One(innerContent) }
+    return;
+  }
+
+  @if (Text.Has(DynamicModel.Data.VideoUrl)) {
+    var youTube = Regex.Match(DynamicModel.Data.VideoUrl, @"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)");
+    var youTubeUrl = youTube.Success 
+      ? "https://www.youtube.com/embed/" + youTube.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent"
+      : "";
+
+    <a data-fancybox="fancybox-@CmsContext.Module.Id" data-width="1280" data-height="720" data-caption="@DynamicModel.Data.Title" href="@youTubeUrl">
+      @if (!Text.Has(DynamicModel.Data.Image)) {
+        <div class="dnnFormMessage dnnFormWarning">Preview Image not found. Please add Preview Image or turn off
+          Video-Lightbox</div>
+        return;
+      }
+      <div class="content-video">
+        <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
+          <i class="fab fa-youtube"></i>
+        </div>
+        <img class="img-fluid" src='@Link.Image(DynamicModel.Data.Image, width: 1050, resizeMode: "max", quality: 70)' alt="@DynamicModel.Data.Title">
+      </div>
+    </a>
+    @Html.Partial("_Assets.cshtml", new { fancybox = true });
+    return;
+  }
+  @if (Text.Has(DynamicModel.Data.Image)) {
+    <img class="img-fluid"
+      src='@Link.Image(DynamicModel.Data.Image, width: 1050, resizeMode: "max", quality: 70)'
+      alt="@DynamicModel.Data.Title">
+    return;
+  }
+  @if (Text.Has(DynamicModel.Data.Icon)) {
+    <div class="text-center">
+      <i class="content-icon fas @DynamicModel.Data.Icon" aria-hidden="true"></i>
+    </div>
+    return;
+  }
+</div>
