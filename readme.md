@@ -1,5 +1,9 @@
 <img src="app-icon.png" align="right" width="200px">
 
+# Important - this App is for 2sic only
+
+It's not meant for distribution
+
 # Landing Page Builder App for .net CMSs
 
 > This is a [2sxc](https://2sxc.org) App for [DNN ☢️](https://www.dnnsoftware.com/) and [Oqtane 💧](https://www.oqtane.org/)
