@@ -4,7 +4,7 @@
   var parts = CreateInstance("../shared/Parts.cs");
   var i = 0;
   var rowEven = "order-md-2";
-  var rowOdd = "text-right";
+  var rowOdd = "text-end";
 }
 
 <section class='app-landingpage-builder app-lp-benefits @parts.SectionClasses()' @parts.SectionStyle()
@@ -13,17 +13,17 @@
   <div class="container-fluid" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
     @Html.Partial("../shared/_Block.cshtml")
     @foreach (var data in AsList(Data)) {
-      <div class="row align-items-center mb-5" @Edit.TagToolbar(data, toolbar: "settings&hover=left&autoAddMore=start")>
-        <div class="col-12 col-md-6 mb-4 @(i++ % 2 != 0 ? rowEven : rowOdd)">
-          @Html.Partial("_Benefits.PartBody.cshtml", new { Data = data})
+      <div class="row align-items-center mb-5" @Edit.TagToolbar(data)>
+        <div class="col-12 col-md-6 mb-4 @(i++ % 2 == 0 ? rowEven : rowOdd)">
+          @Html.Partial("_Benefits.PartBody.cshtml", new { Data = data })
         </div>
         @Html.Partial("../shared/_Media Content.cshtml", new { Data = data })
       </div>
     }
 
-    @if(Header.CTA.Count > 0) { 
+    <div>
       @parts.HeaderCta(Header.CTA)
-    }
+    </div>
   </div>
 </section>
 

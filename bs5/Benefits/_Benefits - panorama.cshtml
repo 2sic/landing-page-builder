@@ -1,0 +1,35 @@
+@inherits Custom.Hybrid.Razor12
+@using ToSic.Razor.Blade;
+@{
+  var parts = CreateInstance("../shared/Parts.cs");
+  var i = 0;
+  var rowEven = "order-md-2";
+  var rowOdd = "offset-xl-1";
+  var presentation = Header.Presentation;
+}
+
+<section
+  class="app-landingpage-builder app-lp-image-zig-zag section-text-@presentation.TextOptimization section-bg-color-@presentation.BackgroundColor"
+  @Edit.TagToolbar(Header, toolbar: "settings&hover=left&autoAddMore=start")>
+  @parts.BackgroundDiv()
+  <div class="container-fluid" @Edit.Attribute("quick-edit-config", new { modules = new { enable = true }})>
+    @Html.Partial("../shared/_Block.cshtml")
+    @foreach (var data in AsList(Data)) {
+      <div class="row g-0" @Edit.TagToolbar(data)>
+        <div class="col-12 col-md-6 col-xl-5 @(i++ % 2 == 0 ? rowEven : rowOdd)">
+          <div class="d-flex align-items-center h-100">
+            <div class="zig-zag-content">
+              @Html.Partial("_Benefits.PartBody.cshtml", new { Data = data })
+            </div>
+          </div>
+        </div>
+        <div 
+          class="col-12 col-md-6 zig-zag-image" 
+          style='@(Text.Has(data.Image) ? "background-image: url('" + Link.Image(data.Image, width: 2560, quality: 70) + "');" : "")'></div>
+      </div>
+    }
+    @parts.HeaderCta(Header.CTA)
+  </div>
+</section>
+
+@Html.Partial("../shared/_Assets.cshtml")

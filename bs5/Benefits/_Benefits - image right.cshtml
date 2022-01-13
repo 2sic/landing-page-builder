@@ -4,7 +4,7 @@
   var parts = CreateInstance("../shared/Parts.cs");
   var i = 0;
   var rowEven = "order-md-2";
-  var rowOdd = "text-right";
+  var rowOdd = "text-end";
 }
 
 <section class='app-landingpage-builder app-lp-benefits @parts.SectionClasses()' @parts.SectionStyle()
@@ -24,6 +24,7 @@
     @if(Header.CTA.Count > 0) { 
       @parts.HeaderCta(Header.CTA)
     }
+
   </div>
 </section>
 

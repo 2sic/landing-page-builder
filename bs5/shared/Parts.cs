@@ -4,18 +4,16 @@ public class Parts: Custom.Hybrid.Code12
 {
 
   public dynamic SectionStyle() {
-    var presentation = Header.Presentation;
-    return Tag.Attr("style", (Text.Has(presentation.BGImage) ? "background-image: url('" + Link.Image(presentation.BGImage, width: 2560, quality: 70) + "')" : ""));
+    var bgImage = Header.Presentation.BGImage;
+    return Tag.Attr("style", (Text.Has(bgImage) ? "background-image: url('" + Link.Image(bgImage, width: 2560, quality: 70) + "')" : ""));
   }
 
   public string SectionClasses() {
-    var presentation = Header.Presentation;
-    return "section-text-" + presentation.TextOptimization + " section-bg-color-" + presentation.BackgroundColor + (Text.Has(presentation.BGImage) ? " section-bg-img" : "");
+    return "section-text-" + Header.Presentation.TextOptimization + " section-bg-color-" + Header.Presentation.BackgroundColor + (Text.Has(Header.Presentation.BGImage) ? " section-bg-img" : "");
   }
 
   public dynamic BackgroundDiv() {
-    var presentation = Header.Presentation;
-    return Tag.Div().Class("section-bg-img-overlay section-bg-effect-" + presentation.BGImageEffects);
+    return Tag.Div().Class("section-bg-img-overlay section-bg-effect-" + Header.Presentation.BGImageEffects);
   }
 
   public dynamic CtaList(dynamic ctas) {
