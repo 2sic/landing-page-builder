@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="13.00.01" ExportDate="2022-01-14T08:39:49.8829059+01:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="13.00.01" ExportDate="2022-01-14T09:34:01.3054492+01:00">
   <Header>
     <App Guid="90846f26-81fd-469f-bc50-65af4c761a2e" />
     <Language Default="en-us" />
@@ -3165,6 +3165,9 @@
       <Value Key="VideoUrl" Value="https://www.youtube.com/watch?v=rTgj1HxmUbg&amp;ab_channel=cameronbarnett" Type="Hyperlink">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="a79d59d7-619e-4599-b2f2-2121dcaf387c" Json="True">
+      <Value Key="Template" Value="337ebcc4-fc8f-4ea4-875d-bc38a9a0cf47" Type="Entity" />
     </Entity>
   </Entities>
   <PortalFiles>
