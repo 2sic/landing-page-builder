@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="13.00.01" ExportDate="2022-01-12T12:51:29.7321089+01:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="13.00.01" ExportDate="2022-01-14T08:39:49.8829059+01:00">
   <Header>
     <App Guid="90846f26-81fd-469f-bc50-65af4c761a2e" />
     <Language Default="en-us" />
@@ -779,6 +779,9 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="118" ReadOnly="false" />
             </Value>
+            <Value Key="DisableTranslation" Value="False" Type="Boolean">
+              <Dimension DimensionID="118" ReadOnly="false" />
+            </Value>
             <Value Key="InputType" Value="string-font-icon-picker" Type="String">
               <Dimension DimensionID="118" ReadOnly="false" />
             </Value>
@@ -790,6 +793,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Das icon wird nur angezeigt, falls es kein Bild hat.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="119" ReadOnly="false" />
+            </Value>
+            <Value Key="Placeholder" Value="" Type="String">
+              <Dimension DimensionID="118" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="118" ReadOnly="false" />
@@ -813,7 +819,7 @@
             <Value Key="CssPrefix" Value=".fa-" Type="String">
               <Dimension DimensionID="118" ReadOnly="false" />
             </Value>
-            <Value Key="Files" Value="[App:Path]/dist/fontawesome/css/fontawesome-nobrands.min.css" Type="String">
+            <Value Key="Files" Value="[App:Path]/icons/fontawesome/css/fontawesome-nobrands.min.css" Type="String">
               <Dimension DimensionID="118" ReadOnly="false" />
             </Value>
             <Value Key="PreviewCss" Value="fas" Type="String">
@@ -1590,7 +1596,7 @@
       <Value Key="ContentTypeStaticName" Value="1cadc38c-c0b6-44fb-b2b4-75652cb27d50" Type="String">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/icons/_Cover - image right.png" Type="Hyperlink">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -1654,7 +1660,7 @@
       <Value Key="ContentTypeStaticName" Value="1cadc38c-c0b6-44fb-b2b4-75652cb27d50" Type="String">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/icons/_Cover - image left.png" Type="Hyperlink">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -1718,7 +1724,7 @@
       <Value Key="ContentTypeStaticName" Value="1cadc38c-c0b6-44fb-b2b4-75652cb27d50" Type="String">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/icons/_Cover - text only.png" Type="Hyperlink">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -1791,7 +1797,7 @@
       <Value Key="ContentTypeStaticName" Value="1cadc38c-c0b6-44fb-b2b4-75652cb27d50" Type="String">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/icons/_Benefits - image right.png" Type="Hyperlink">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -1876,7 +1882,7 @@
       <Value Key="ContentTypeStaticName" Value="1cadc38c-c0b6-44fb-b2b4-75652cb27d50" Type="String">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/icons/_Benefits - image left.png" Type="Hyperlink">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -1940,7 +1946,7 @@
       <Value Key="ContentTypeStaticName" Value="1cadc38c-c0b6-44fb-b2b4-75652cb27d50" Type="String">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/icons/_Benefits - text only.png" Type="Hyperlink">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -2004,7 +2010,7 @@
       <Value Key="ContentTypeStaticName" Value="3e72df25-8fc3-4956-8545-7cb620bbc4ac" Type="String">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/icons/_Testimonial - person.png" Type="Hyperlink">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -2068,7 +2074,7 @@
       <Value Key="ContentTypeStaticName" Value="3e72df25-8fc3-4956-8545-7cb620bbc4ac" Type="String">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/icons/_Testimonial - brands.png" Type="Hyperlink">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -2146,7 +2152,7 @@
       <Value Key="ContentTypeStaticName" Value="1cadc38c-c0b6-44fb-b2b4-75652cb27d50" Type="String">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/icons/_Benefits - panorama.png" Type="Hyperlink">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -2400,7 +2406,7 @@
       <Value Key="ContentTypeStaticName" Value="a1be0251-dd97-42bb-8627-5def95436e14" Type="String">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/icons/_Cta - only.png" Type="Hyperlink">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -2917,7 +2923,7 @@
       <Value Key="Title" Value="2ro Test" Type="String" />
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="c3fc5957-d231-4060-ba99-357894b4a87b" Json="True">
-      <Value Key="Content" Value="null" Type="Entity" />
+      <Value Key="Content" Value="2cc0a8cc-3111-4f64-a1ac-557828195ad7" Type="Entity" />
       <Value Key="Presentation" Value="null" Type="Entity" />
       <Value Key="Template" Value="337ebcc4-fc8f-4ea4-875d-bc38a9a0cf47" Type="Entity" />
     </Entity>
@@ -2986,7 +2992,7 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="3937fa17-ef2d-40a7-b089-64164eb10bab" AttributeSetName="2sxcPolymorphismConfiguration" EntityGUID="743e2064-0c40-4243-8383-c80917944083" Json="True">
-      <Value Key="Mode" Value="Permissions?IsSuperUser" Type="String">
+      <Value Key="Mode" Value="Koi?cssFramework" Type="String">
         <Dimension DimensionID="118" ReadOnly="false" />
       </Value>
     </Entity>
@@ -3108,16 +3114,74 @@
       <Value Key="Template" Value="7d3a9033-983e-4825-8091-1599cf6e36d0" Type="String" />
       <Value Key="Title" Value="" Type="String" />
     </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="1cadc38c-c0b6-44fb-b2b4-75652cb27d50" AttributeSetName="Content" EntityGUID="2cc0a8cc-3111-4f64-a1ac-557828195ad7">
+      <Value Key="Body" Value="" Type="String">
+        <Dimension DimensionID="118" ReadOnly="false" />
+      </Value>
+      <Value Key="CTA" Value="4ec6ded6-a622-44aa-a886-e88ed75c2061" Type="Entity" />
+      <Value Key="Icon" Value="" Type="String">
+        <Dimension DimensionID="118" ReadOnly="false" />
+      </Value>
+      <Value Key="Image" Value="" Type="Hyperlink">
+        <Dimension DimensionID="118" ReadOnly="false" />
+      </Value>
+      <Value Key="MicroTitle" Value="tees title" Type="String">
+        <Dimension DimensionID="118" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="test" Type="String">
+        <Dimension DimensionID="118" ReadOnly="false" />
+      </Value>
+      <Value Key="UseInnerContent" Value="False" Type="Boolean">
+        <Dimension DimensionID="118" ReadOnly="false" />
+      </Value>
+      <Value Key="VideoUrl" Value="" Type="Hyperlink">
+        <Dimension DimensionID="118" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="addaab2c-3f9c-4f76-83a5-77adc7d86130" Json="True">
+      <Value Key="Content" Value="a94b9f35-6b07-440d-b464-e578815fc069" Type="Entity" />
+      <Value Key="Presentation" Value="null" Type="Entity" />
+      <Value Key="Template" Value="f0127d68-7268-4bb0-9bc3-c3e4d32bc348" Type="Entity" />
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="1cadc38c-c0b6-44fb-b2b4-75652cb27d50" AttributeSetName="Content" EntityGUID="a94b9f35-6b07-440d-b464-e578815fc069">
+      <Value Key="Body" Value="" Type="String">
+        <Dimension DimensionID="118" ReadOnly="false" />
+      </Value>
+      <Value Key="Icon" Value="" Type="String">
+        <Dimension DimensionID="118" ReadOnly="false" />
+      </Value>
+      <Value Key="Image" Value="file:6090" Type="Hyperlink">
+        <Dimension DimensionID="118" ReadOnly="false" />
+      </Value>
+      <Value Key="MicroTitle" Value="" Type="String">
+        <Dimension DimensionID="118" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="asdas" Type="String">
+        <Dimension DimensionID="118" ReadOnly="false" />
+      </Value>
+      <Value Key="UseInnerContent" Value="False" Type="Boolean">
+        <Dimension DimensionID="118" ReadOnly="false" />
+      </Value>
+      <Value Key="VideoUrl" Value="https://www.youtube.com/watch?v=rTgj1HxmUbg&amp;ab_channel=cameronbarnett" Type="Hyperlink">
+        <Dimension DimensionID="118" ReadOnly="false" />
+      </Value>
+    </Entity>
   </Entities>
   <PortalFiles>
     <File Id="4324" RelativePath="adam\Landing Page Builder\19XmBzXmCUOwFGX_pZDIbQ\BGImage\Demo-2.jpg" />
     <File Id="4328" RelativePath="adam\Landing Page Builder\OW7sGiXv1Uu0eoilUuOFsg\Image\Avatar.jpg" />
     <File Id="4329" RelativePath="adam\Landing Page Builder\9Qsd2yjiVE-RT5jjXr3sRg\Image\logo-demo.png" />
+    <File Id="6090" RelativePath="adam\LandingPageBuilder3\NZ9LqQdrDUS0ZOV4gV_AaQ\Image\Platzhalterbild_Inhalt-1.jpg" />
+    <File Id="6089" RelativePath="adam\LandingPageBuilder3\zKjALBExZE-hrFV4KBla1w\Image\Platzhalterbild_Inhalt-1.jpg" />
   </PortalFiles>
   <PortalFolders>
     <Folder Id="2684" RelativePath="adam/Landing Page Builder/19XmBzXmCUOwFGX_pZDIbQ/BGImage/" />
     <Folder Id="7428" RelativePath="adam/Landing Page Builder/OW7sGiXv1Uu0eoilUuOFsg/Image/" />
     <Folder Id="7430" RelativePath="adam/Landing Page Builder/9Qsd2yjiVE-RT5jjXr3sRg/Image/" />
+    <Folder Id="13633" RelativePath="adam/LandingPageBuilder3/NZ9LqQdrDUS0ZOV4gV_AaQ/Image/" />
+    <Folder Id="13631" RelativePath="adam/LandingPageBuilder3/zKjALBExZE-hrFV4KBla1w/Image/" />
     <Folder Id="13629" RelativePath="adam/LandingPageBuilder3/" />
+    <Folder Id="13632" RelativePath="adam/LandingPageBuilder3/NZ9LqQdrDUS0ZOV4gV_AaQ/" />
+    <Folder Id="13630" RelativePath="adam/LandingPageBuilder3/zKjALBExZE-hrFV4KBla1w/" />
   </PortalFolders>
 </SexyContent>
