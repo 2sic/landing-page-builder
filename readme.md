@@ -36,3 +36,4 @@ If you want to customize the CSS, you will usually follow the ["Create Custom St
 * v3 2022-01
     * Latest best-practices of 2sxc 12.05
     * Added bs5 view
+    * Enabled data-optimizations
